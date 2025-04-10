@@ -170,11 +170,60 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
+footer ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
 footer a {
-    color: #007bff;
+    color: #ffffff;
     text-decoration: none;
 }
 
 footer a:hover {
     color: #0056b3;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode a {
+    color: #66b2ff;
+}
+
+body.dark-mode a:hover {
+    color: #3399ff;
+}
+
+body.dark-mode .introduction {
+    background-color: #444; /* Dark background for introduction */
+    color: #fff; /* Light text for readability */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
+}
+
+body.dark-mode .navbar {
+    background-color: #222;
+}
+
+body.dark-mode .project {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .skills {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .socials {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode footer {
+    background-color: #222;
 }
