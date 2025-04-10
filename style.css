@@ -1,7 +1,6 @@
 /* General Styles */
 html, body {
-    background-color: #f4f4f9; /* Light background for better readability */
-    padding: 20px;
+    background-color: #f8f9fa; /* Bootstrap's light background */
     font-family: 'Roboto', Arial, sans-serif; /* Modern font for a clean look */
     font-size: 16px;
     line-height: 1.6;
@@ -9,22 +8,22 @@ html, body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    color: #333; /* Neutral text color */
+    color: #212529; /* Bootstrap's neutral text color */
 }
 
 a {
-    color: #007bff; /* Primary theme color for links */
+    color: #007bff; /* Bootstrap's primary theme color for links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3; /* Darker shade for hover effect */
+    color: #0056b3; /* Bootstrap's darker shade for hover effect */
 }
 
 /* Header */
 header {
-    background-color: #333; /* Dark header background */
+    background-color: #343a40; /* Bootstrap's dark header background */
     color: #fff;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -35,7 +34,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #444; /* Slightly lighter than header */
+    background-color: #343a40; /* Bootstrap's navbar-dark background */
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -61,7 +60,7 @@ header {
 }
 
 .navbar a:hover {
-    background-color: #555; /* Highlight on hover */
+    background-color: #495057; /* Bootstrap's hover effect */
     color: #fff;
 }
 
@@ -102,7 +101,7 @@ header {
 
 /* Skills Section */
 .skills {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -129,6 +128,26 @@ header {
 
 .skills li:hover {
     background-color: #0056b3;
+}
+
+.skills .card {
+    background-color: #f8f9fa; /* Bootstrap's light card background */
+    border: 1px solid #dee2e6; /* Bootstrap's card border */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skills .card-body {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #212529;
 }
 
 /* Socials Section */
@@ -161,13 +180,16 @@ header {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #343a40; /* Bootstrap's dark footer background */
     color: #fff;
     padding: 10px 20px;
     text-align: center;
     margin-top: auto;
     border-radius: 5px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Make the footer sticky */
+    bottom: 0;
+    width: 100%;
 }
 
 footer ul {
@@ -177,18 +199,22 @@ footer ul {
 }
 
 footer a {
-    color: #ffffff;
+    color: #1c0505;
     text-decoration: none;
 }
 
+footer p {
+    color: #1c0505; /* Dark background for footer text */
+}
+
 footer a:hover {
-    color: #0056b3;
+    color: #adb5bd; /* Bootstrap's muted hover color */
 }
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #333;
-    color: #fff;
+    background-color: #212529; /* Bootstrap's dark background */
+    color: #f8f9fa; /* Light text for readability */
 }
 
 body.dark-mode a {
@@ -199,31 +225,15 @@ body.dark-mode a:hover {
     color: #3399ff;
 }
 
-body.dark-mode .introduction {
-    background-color: #444; /* Dark background for introduction */
-    color: #fff; /* Light text for readability */
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
-}
-
-body.dark-mode .navbar {
-    background-color: #222;
-}
-
-body.dark-mode .project {
-    background-color: #444;
-    color: #fff;
-}
-
-body.dark-mode .skills {
-    background-color: #444;
-    color: #fff;
-}
-
+body.dark-mode .introduction,
+body.dark-mode .project,
+body.dark-mode .skills .card,
 body.dark-mode .socials {
-    background-color: #444;
-    color: #fff;
+    background-color: #343a40; /* Dark background for sections */
+    color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode footer {
-    background-color: #222;
+    background-color: #212529;
 }
