@@ -7,7 +7,7 @@ document.querySelector("body").appendChild(h2);
 // Ensure dark mode toggle button appears on all pages
 document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggle = document.createElement('button');
-    darkModeToggle.textContent = "Toggle Dark Mode";
+    darkModeToggle.textContent = "Dark Mode";
     darkModeToggle.style.position = "fixed";
     darkModeToggle.style.bottom = "20px";
     darkModeToggle.style.right = "20px";
@@ -41,20 +41,6 @@ projectCards.forEach(card => {
         card.style.transform = "scale(1)";
     });
 });
-
-// Smooth scroll for navigation links
-const navLinks = document.querySelectorAll('.navbar a');
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
 // Validate and handle form submission
 function validateAndSubmit() {
     const name = document.getElementById('name').value.trim();
