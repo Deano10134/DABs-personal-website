@@ -27,7 +27,7 @@
   </header>
 
   <main class="container my-4">
-    <section class="introduction">
+    <section id="introduction" class="introduction">
       <h1>Welcome</h1>
       <p>
         Welcome to my personal website! I am a software engineer with a passion for web development and design. 
@@ -45,13 +45,13 @@
         Feel free to explore my website and learn more about me and my work. If you have any questions or would like to get in touch, 
         please don't hesitate to message me on LinkedIn.
         <a href="https://www.linkedin.com/in/deanbaberowski">
-          <img src="./Images/317750_linkedin_icon.png" alt="LinkedIn" style="width:20px; height:20px;">
+          <img src="./images/317750_linkedin_icon.png" alt="LinkedIn" style="width: 20px; height: 20px;">
         </a> 
-        or visit my <a href="./contactus.html">Contact Me</a> page.
+        or visit my <a href="#contact">Contact Me</a> page.
       </p>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
       <h2>Projects</h2>
       <div class="project">
         <h3>Project 1: Personal Website</h3>
@@ -68,7 +68,7 @@
       </div>
     </section>
 
-    <section class="skills">
+    <section id="skills" class="skills">
       <h2>Skills</h2>
       <ul class="list-group">
         <li class="list-group-item">HTML</li>
@@ -80,7 +80,7 @@
       </ul>
     </section>
 
-    <section class="socials">
+    <section id="contact" class="socials">
       <h2>Follow Me on My Socials:</h2>
       <ul class="list-group">
         <li class="list-group-item">
@@ -98,21 +98,19 @@
       </ul>
     </section>
   </main>
-
   <footer class="bg-light py-3">
     <div class="container text-center">
       <nav>
         <ul class="footer-nav list-inline">
-          <li class="footer-nav list-inline-item"><a href="index.html">Home</a></li>
+          <li class="footer-nav list-inline-item"><a href="#introduction">Home</a></li>
           <li class="footer-nav list-inline-item"><a href="about.html">About</a></li>
-          <li class="footer-nav list-inline-item"><a href="blog.html">Blog</a></li>
-          <li class="footer-nav list-inline-item"><a href="contactme.html">Contact Me</a></li>
+          <li class="footer-nav list-inline-item"><a href="#projects">Projects</a></li>
+          <li class="footer-nav list-inline-item"><a href="#contact">Contact Me</a></li>
         </ul>
       </nav>
-      <p>&copy; 2025 DABS Personal Website. All rights reserved.</p>
+      <p>&copy; 2025 Dean Baberowski's Personal Website. All rights reserved.</p>
     </div>
   </footer>
   <script src="script.js"></script>
 </body>
-
 </html>
