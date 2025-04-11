@@ -1,239 +1,209 @@
 /* General Styles */
 html, body {
-    background-color: #f8f9fa; /* Bootstrap's light background */
-    font-family: 'Roboto', Arial, sans-serif; /* Modern font for a clean look */
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    color: #212529; /* Bootstrap's neutral text color */
+  background-color: #f8f9fa;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #212529;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+/* Container Overrides */
+.container {
+  max-width: 1200px;
+  padding: 20px 0;
+}
+
+/* Links */
 a {
-    color: #007bff; /* Bootstrap's primary theme color for links */
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3; /* Bootstrap's darker shade for hover effect */
+  color: #5a5a5a;
 }
 
-/* Header */
-header {
-    background-color: #343a40; /* Bootstrap's dark header background */
-    color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Navigation Bar */
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #343a40; /* Bootstrap's navbar-dark background */
-    padding: 10px 20px;
-    border-radius: 5px;
+  background-color: #f8f9fa !important;
+  color: #212529;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 15px; /* Add spacing between menu items */
+.navbar .nav-link {
+  color: #000 !important; /* Black text for light mode */
 }
 
-.navbar li {
-    margin: 0;
+.navbar .nav-link:hover {
+  color: #007bff !important; /* Blue on hover */
 }
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 3px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.navbar .navbar-brand {
+  color: #000 !important; /* Black text for light mode */
 }
 
-.navbar a:hover {
-    background-color: #495057; /* Bootstrap's hover effect */
-    color: #fff;
+.navbar.dark-mode {
+  background-color: #343a40 !important;
+  color: #f8f9fa;
 }
 
-/* Introduction Section */
-.introduction {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+.navbar.dark-mode .nav-link {
+  color: #f8f9fa !important; /* White text for dark mode */
 }
 
-/* Projects Section */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
+.navbar.dark-mode .nav-link:hover {
+  background-color: #6c757d; /* Gray background on hover */
 }
 
+.navbar.dark-mode .navbar-brand {
+  color: #f8f9fa !important; /* White text for dark mode */
+}
+
+.nav-link {
+  color: #f8f9fa !important;
+}
+
+.nav-link:hover {
+  background-color: #6c757d;
+}
+
+/* Content Sections */
+section {
+  margin-bottom: 40px;
+}
+
+.introduction,
+.skills,
+.socials,
 .project {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+section.dark-mode, .project.dark-mode {
+  background-color: #1e1e1e;
+  color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Projects Grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Projects Card */
 .project:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.project h3 {
-    margin-top: 0;
-    color: #007bff;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Skills Section */
-.skills {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.skills ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skills li {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 3px;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.skills li:hover {
-    background-color: #0056b3;
-}
-
 .skills .card {
-    background-color: #f8f9fa; /* Bootstrap's light card background */
-    border: 1px solid #dee2e6; /* Bootstrap's card border */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: none;
 }
 
 .skills .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #007bff;
+  color: #fff;
 }
 
-.skills .card-body {
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #212529;
+.skills.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.skills.dark-mode .card:hover {
+  background-color: #343a40;
+  color: #ffffff;
 }
 
 /* Socials Section */
-.socials {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.socials ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
-
-.socials a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #007bff;
-    transition: color 0.3s ease;
+.socials .list-group-item {
+  border: none;
 }
 
 .socials a:hover {
-    color: #0056b3;
+  color: #0056b3;
+}
+
+.socials.dark-mode {
+  background-color: #1e1e1e;
+  color: #f8f9fa;
+}
+
+.socials.dark-mode .list-group-item {
+  background-color: #1e1e1e;
+  color: #f8f9fa;
+}
+
+socials.dark-mode a:hover {
+  color: #ffffff;
 }
 
 /* Footer */
 footer {
-    background-color: #343a40; /* Bootstrap's dark footer background */
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-    margin-top: auto;
-    border-radius: 5px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Make the footer sticky */
-    bottom: 0;
-    width: 100%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-footer ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0;
-    margin: 0;
-}
-
-footer a {
-    color: #1c0505;
-    text-decoration: none;
-}
-
-footer p {
-    color: #1c0505; /* Dark background for footer text */
+footer.dark-mode {
+  background-color: #343a40;
+  color: #f8f9fa;
 }
 
 footer a:hover {
-    color: #adb5bd; /* Bootstrap's muted hover color */
+  color: #0056b3;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #212529; /* Bootstrap's dark background */
-    color: #f8f9fa; /* Light text for readability */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .skills .card {
+    margin-bottom: 10px;
+  }
 }
 
-body.dark-mode a {
-    color: #66b2ff;
+.menu-options {
+  display: none;
+  position: absolute;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
 }
 
-body.dark-mode a:hover {
-    color: #3399ff;
+.menu-options.show {
+  display: block;
 }
 
-body.dark-mode .introduction,
-body.dark-mode .project,
-body.dark-mode .skills .card,
-body.dark-mode .socials {
-    background-color: #343a40; /* Dark background for sections */
-    color: #f8f9fa;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+.menu-options li {
+  padding: 10px;
 }
 
-body.dark-mode footer {
-    background-color: #212529;
+.menu-options li a {
+  color: #212529;
+  text-decoration: none;
+}
+
+.menu-options li a:hover {
+  color: #007bff;
 }
