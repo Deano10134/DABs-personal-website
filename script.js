@@ -1,11 +1,11 @@
+// Add a heading dynamically
 const h2 = document.createElement("h2");
 h2.textContent = "This content added by JavaScript";
 document.querySelector("body").appendChild(h2);
 
-
-
 // Ensure dark mode toggle button appears on all pages
 document.addEventListener('DOMContentLoaded', () => {
+    // Create dark mode toggle button
     const darkModeToggle = document.createElement('button');
     darkModeToggle.textContent = "Dark Mode";
     darkModeToggle.style.position = "fixed";
@@ -19,17 +19,79 @@ document.addEventListener('DOMContentLoaded', () => {
     darkModeToggle.style.cursor = "pointer";
     document.body.appendChild(darkModeToggle);
 
+    // Check localStorage for dark mode state
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        enableDarkMode();
+    }
+
+    // Toggle dark mode functionality
     darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
+    function enableDarkMode() {
+        document.body.classList.add('dark-mode');
+        const elementsToToggle = document.querySelectorAll('.navbar, footer, section, .project, .skills, .socials');
+        elementsToToggle.forEach(element => {
+            element.classList.add('dark-mode');
+            if (element.classList.contains('navbar')) {
+                element.classList.remove('bg-light');
+                element.classList.add('bg-dark');
+            }
+            if (element.tagName === 'FOOTER') {
+                element.classList.add('bg-dark', 'text-light');
+                element.classList.remove('bg-light', 'text-dark');
+            }
+        });
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeToggle.textContent = "Light Mode";
+    }
+
+    function disableDarkMode() {
+        document.body.classList.remove('dark-mode');
+        const elementsToToggle = document.querySelectorAll('.navbar, footer, section, .project, .skills, .socials');
+        elementsToToggle.forEach(element => {
+            element.classList.remove('dark-mode');
+            if (element.classList.contains('navbar')) {
+                element.classList.remove('bg-dark');
+                element.classList.add('bg-light');
+            }
+            if (element.tagName === 'FOOTER') {
+                element.classList.add('bg-light', 'text-dark');
+                element.classList.remove('bg-dark', 'text-light');
+            }
+        });
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeToggle.textContent = "Dark Mode";
+    }
+
+    // Menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuOptions = document.querySelector('.menu-options');
+
+    if (menuToggle && menuOptions) {
+        menuToggle.addEventListener('click', () => {
+            menuOptions.classList.toggle('show');
+        });
+    }
+
+    // Add Bootstrap form validation
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
     });
 });
 
-const form = document.querySelector('form');
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    validateAndSubmit();
-});
 // Animate project cards on hover
 const projectCards = document.querySelectorAll('.project');
 projectCards.forEach(card => {
@@ -41,6 +103,7 @@ projectCards.forEach(card => {
         card.style.transform = "scale(1)";
     });
 });
+
 // Validate and handle form submission
 function validateAndSubmit() {
     const name = document.getElementById('name').value.trim();
