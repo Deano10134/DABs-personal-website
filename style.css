@@ -148,7 +148,7 @@ section.dark-mode, .project.dark-mode {
   color: #f8f9fa;
 }
 
-socials.dark-mode a:hover {
+.socials.dark-mode a:hover {
   color: #ffffff;
 }
 
@@ -181,18 +181,49 @@ footer a:hover {
 }
 
 .menu-options {
-  display: none;
+  display: none; /* Hide by default */
   position: absolute;
-  background-color: #f8f9fa;
+  top: 100%; /* Position below the navbar */
+  right: 0;
+  background-color: #ffffff; /* White background for light mode */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 10px;
   margin: 0;
   border-radius: 5px;
+  z-index: 1000;
 }
 
 .menu-options.show {
-  display: block;
+  display: block; /* Show when toggle is clicked */
+}
+
+.menu-options.dark-mode {
+  background-color: #1e1e1e; /* Dark background for dark mode */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.menu-options.dark-mode li a {
+  color: #f8f9fa; /* White text for dark mode */
+}
+
+.menu-options.dark-mode li a:hover {
+  color: #007bff; /* Blue on hover */
+}
+
+@media (min-width: 992px) {
+  .menu-options {
+    display: flex !important; /* Always show desktop menu */
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .menu-options.dark-mode {
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 .menu-options li {
