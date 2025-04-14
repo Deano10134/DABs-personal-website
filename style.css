@@ -21,24 +21,22 @@ html, body {
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for mode changes */
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--background-color); /* Default light mode background */
-  color: var(--text-color); /* Default light mode text color */
 }
-
-/* Removed redundant .dark-mode html, .dark-mode body selector */
 
 /* Containers */
 .container {
   max-width: 1200px;
-  padding: 20px 0;
+  padding: 20px; /* Standardized padding */
+  margin: 0 auto; /* Center align */
 }
 
 /* Links */
@@ -54,101 +52,44 @@ a:hover {
 
 /* Navbar */
 .navbar {
-  background-color: var(--navbar-bg); /* Dynamic background color */
-  color: var(--navbar-text); /* Dynamic text color */
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  padding: 10px 20px; /* Added consistent padding */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: var(--navbar-text) !important; /* Dynamic link color */
+  color: var(--navbar-text) !important;
 }
 
 .navbar .nav-link.active {
   font-weight: bold;
   text-decoration: underline;
-  color: var(--link-color); /* Dynamic active link color */
+  color: var(--link-color);
 }
 
 .navbar .nav-link:hover {
-  color: var(--link-color); /* Dynamic hover color */
+  color: var(--link-color);
 }
 
-/* Remove redundant hardcoded dark mode styles for navbar */
-[data-theme="dark"] .navbar {
-  background-color: var(--navbar-bg); /* Use variable for dark mode */
-  color: var(--navbar-text); /* Use variable for dark mode */
-}
-
-[data-theme="dark"] .navbar .nav-link,
-[data-theme="dark"] .navbar .navbar-brand {
-  color: var(--navbar-text) !important; /* Use variable for dark mode */
-}
-
-[data-theme="dark"] .navbar .nav-link.active {
-  color: var(--link-color) !important; /* Use variable for dark mode */
-}
-
-/* Menu */
-.menu-options {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: var(--background-color); /* Use variable for light/dark mode */
-  color: var(--text-color); /* Use variable for light/dark mode */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-  border-radius: 5px;
-  z-index: 1000;
-}
-
-.menu-options.show {
-  display: block; /* Show menu options when toggled */
-}
-
-.menu-toggle {
-  background-color: var(--navbar-bg); /* Dynamic background color */
-  color: var(--navbar-text); /* Dynamic text color */
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.menu-toggle.active {
-  background-color: var(--link-color); /* Dynamic active background color */
-  color: #fff; /* Ensure text is visible */
-}
-
-.menu-options li a {
-  color: var(--text-color); /* Use variable for light/dark mode */
-}
-
-.menu-options li a:hover {
-  color: var(--link-color); /* Use variable for light/dark mode */
-}
-
-/* Layout Sections */
+/* Sections and Cards */
 section {
   margin-bottom: 40px;
+  padding: 20px; /* Consistent padding for sections */
 }
 
 .introduction,
 .skills,
 .socials,
 .project {
-  background-color: #fff;
-  padding: 30px;
+  background-color: var(--background-color);
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Projects */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -158,26 +99,6 @@ section {
 .project:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Skills */
-.skills .card {
-  text-align: center;
-  border: none;
-}
-
-.skills .card:hover {
-  background-color: #007bff;
-  color: #fff;
-}
-
-/* Socials */
-.socials .list-group-item {
-  border: none;
-}
-
-.socials a:hover {
-  color: #0056b3;
 }
 
 /* Footer */
@@ -190,39 +111,18 @@ footer {
   margin-top: auto;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .projects {
     grid-template-columns: 1fr;
   }
 
-  .skills .card {
-    margin-bottom: 10px;
+  section {
+    padding: 15px; /* Adjusted padding for smaller screens */
   }
 
-  .menu-options {
-    width: 100%;
-    position: fixed;
-    top: 60px; /* Adjust based on navbar height */
-    right: 0;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .menu-options li {
-    padding: 10px 20px;
-  }
-
-  .menu-options li a {
-    display: block;
-    width: 100%;
-    color: var(--text-color);
-    text-align: left;
-  }
-
-  .menu-options li a:hover {
-    background-color: var(--link-color);
-    color: #fff;
+  footer {
+    font-size: 14px;
   }
 }
 
@@ -235,157 +135,7 @@ footer {
     padding: 0;
   }
 
-  .menu-options li a {
-    color: #212529;
-  }
-
   .menu-options li a:hover {
-    color: #007bff;
+    color: var(--link-color);
   }
-}
-
-/* === DARK MODE === */
-[data-theme="dark"] {
-  --background-color: #121212;
-  --text-color: #f8f9fa;
-  --link-color: #5a5a5a;
-  --navbar-bg: #343a40;
-  --navbar-text: #f8f9fa;
-}
-
-[data-theme="dark"] * {
-  background-color: transparent;
-  color: inherit;
-}
-
-[data-theme="dark"] a {
-  color: #007bff;
-}
-
-[data-theme="dark"] a:hover {
-  color: #5a5a5a;
-}
-
-[data-theme="dark"] .navbar,
-[data-theme="dark"] nav {
-  background-color: #343a40 !important;
-  color: #f8f9fa;
-}
-
-[data-theme="dark"] .navbar .nav-link,
-[data-theme="dark"] .navbar .navbar-brand {
-  color: #f8f9fa !important;
-}
-
-[data-theme="dark"] .navbar .nav-link:hover {
-  background-color: #6c757d;
-}
-
-[data-theme="dark"] footer,
-[data-theme="dark"] .footer {
-  background-color: #1e1e1e;
-  color: #f8f9fa;
-  box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] footer a,
-[data-theme="dark"] .footer a {
-  color: #007bff;
-}
-
-[data-theme="dark"] footer a:hover,
-[data-theme="dark"] .footer a:hover {
-  color: #5a5a5a;
-}
-
-[data-theme="dark"] .menu-options {
-  background-color: var(--navbar-bg); /* Use variable for dark mode */
-  color: var(--navbar-text); /* Use variable for dark mode */
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .menu-options li a {
-  color: var(--navbar-text); /* Use variable for dark mode */
-}
-
-[data-theme="dark"] .menu-options li a:hover {
-  color: var(--link-color); /* Use variable for dark mode */
-}
-
-[data-theme="dark"] .form-control {
-  background-color: #1e1e1e;
-  color: #f8f9fa;
-  border: 1px solid #343a40;
-}
-
-[data-theme="dark"] .form-control::placeholder {
-  color: #6c757d;
-}
-
-[data-theme="dark"] .btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-  color: #f8f9fa;
-}
-
-[data-theme="dark"] .btn-success:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
-}
-
-[data-theme="dark"] section,
-[data-theme="dark"] .card,
-[data-theme="dark"] .project,
-[data-theme="dark"] article,
-[data-theme="dark"] aside {
-  background-color: #1e1e1e;
-  color: #f8f9fa;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] main {
-  background-color: #121212;
-}
-
-[data-theme="dark"] .skills .card:hover {
-  background-color: #343a40;
-  color: #ffffff;
-}
-
-[data-theme="dark"] .socials .list-group-item {
-  background-color: #1e1e1e;
-}
-
-[data-theme="dark"] .socials a:hover {
-  color: #ffffff;
-}
-
-[data-theme="dark"] .menu-toggle {
-  background-color: #343a40;
-  color: #f8f9fa;
-}
-
-[data-theme="dark"] .menu-options li a {
-  color: #f8f9fa;
-}
-
-.form-control {
-  background-color: #ffffff; /* Light mode input background */
-  color: #212529; /* Light mode input text color */
-  border: 1px solid #ced4da; /* Light mode border */
-}
-
-.form-control::placeholder {
-  color: #6c757d; /* Light mode placeholder color */
-}
-
-.btn-success {
-  background-color: #28a745; /* Light mode button background */
-  border-color: #28a745; /* Light mode button border */
-  color: #ffffff; /* Light mode button text */
-}
-
-.btn-success:hover {
-  background-color: #218838; /* Light mode button hover background */
-  border-color: #1e7e34; /* Light mode button hover border */
 }
