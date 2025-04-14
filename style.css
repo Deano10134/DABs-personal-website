@@ -4,14 +4,22 @@
   --link-color: #007bff; /* Light mode link */
   --navbar-bg: #f8f9fa; /* Light mode navbar background */
   --navbar-text: #212529; /* Light mode navbar text */
+  --section-bg: #f8f9fa; /* Light mode section background */
+  --card-bg: #ffffff; /* Light mode card background */
+  --list-group-bg: #ffffff; /* Light mode list group background */
+  --hover-bg: #007bff; /* Hover background color */
 }
 
 [data-theme="dark"] {
   --background-color: #121212; /* Dark mode background */
   --text-color: #f8f9fa; /* Dark mode text */
-  --link-color: #5a5a5a; /* Dark mode link */
-  --navbar-bg: #343a40; /* Dark mode navbar background */
+  --link-color: #007bff; /* Dark mode link */
+  --navbar-bg: #5b5b5b; /* Dark mode navbar background */
   --navbar-text: #f8f9fa; /* Dark mode navbar text */
+  --section-bg: #2c2c2c; /* Dark mode section background */
+  --card-bg: #1e1e1e; /* Dark mode card background */
+  --list-group-bg: #1e1e1e; /* Dark mode list group background */
+  --hover-bg: #007bff; /* Hover background color */
 }
 
 /* Base Styles */
@@ -50,28 +58,95 @@ a:hover {
   color: #0056b3;
 }
 
+[data-theme="dark"] a {
+  color: #007bff; /* Blue color for links in dark mode */
+}
+
+[data-theme="dark"] a:hover {
+  color: #0056b3; /* Slightly darker blue on hover */
+}
+
 /* Navbar */
 .navbar {
   background-color: var(--navbar-bg);
   color: var(--navbar-text);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px; /* Added consistent padding */
+  padding: 10px 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: var(--navbar-text) !important;
+  color: var(--navbar-text);
+  text-decoration: none; /* Remove underline */
 }
 
 .navbar .nav-link.active {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--link-color);
 }
 
 .navbar .nav-link:hover {
   color: var(--link-color);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  background-color: var(--navbar-bg);
+  border: 2px solid var(--link-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background-color: var(--link-color);
+  border-color: var(--navbar-text);
+}
+
+.menu-toggle .navbar-toggler-icon {
+  filter: invert(0); /* Default for light mode */
+  transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] .menu-toggle .navbar-toggler-icon {
+  filter: invert(1); /* Adjust for dark mode */
+}
+
+/* Mobile Menu Toggle Icon */
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+  background-image: none; /* Remove default icon */
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--navbar-text);
+  position: absolute;
+  left: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: 5px;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 5px;
+}
+
+.navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Sections and Cards */
@@ -84,12 +159,36 @@ section {
 .skills,
 .socials,
 .project {
-  background-color: var(--background-color);
+  background-color: var(--section-bg);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.skills .card-body,
+.socials .card-body {
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills .card-body:hover,
+.socials .card-body:hover {
+  background-color: var(--hover-bg); /* Change background to blue on hover */
+  color: var(--background-color); /* Use background color for text */
+}
+
+.socials .list-group-item {
+  background-color: var(--list-group-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.socials .list-group-item:hover {
+  background-color: var(--hover-bg); /* Change background to blue on hover */
+  color: var(--background-color); /* Use background color for text */
+}
+
+/* Projects Section */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -98,7 +197,15 @@ section {
 
 .project:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjust shadow for both themes */
+  background-color: var(--navbar-bg); /* Use navbar background for hover */
+  color: var(--text-color); /* Use text color for hover */
+}
+
+/* Skills Section Hover Effect */
+.skills .card:hover {
+  background-color: var(--link-color); /* Use link color for hover */
+  color: var(--background-color); /* Use background color for text */
 }
 
 /* Footer */
@@ -109,6 +216,24 @@ footer {
   text-align: center;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   margin-top: auto;
+}
+
+footer a {
+  color: var(--navbar-text); /* Default color for footer links */
+  text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+  color: var(--link-color); /* Change color on hover */
+}
+
+[data-theme="dark"] footer a {
+  color: #ffffff; /* White color for footer links in dark mode */
+}
+
+[data-theme="dark"] footer a:hover {
+  color: #cccccc; /* Slightly lighter color on hover in dark mode */
+  text-decoration: none; /* Remove underline */
 }
 
 /* Responsive Design */
@@ -138,4 +263,13 @@ footer {
   .menu-options li a:hover {
     color: var(--link-color);
   }
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #000;
 }
