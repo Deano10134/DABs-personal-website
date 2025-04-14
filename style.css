@@ -232,7 +232,7 @@ footer a:hover {
 }
 
 [data-theme="dark"] footer a:hover {
-  color: #cccccc; /* Slightly lighter color on hover in dark mode */
+  color: #ffffff; /* Slightly lighter color on hover in dark mode */
   text-decoration: none; /* Remove underline */
 }
 
