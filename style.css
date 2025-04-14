@@ -201,6 +201,21 @@ section {
   background-color: var(--navbar-bg); /* Use navbar background for hover */
   color: var(--text-color); /* Use text color for hover */
 }
+/* Default light mode styles */
+section {
+  background-color: var(--section-bg); /* Use defined light mode variable */
+  color: var(--text-color); /* Use defined light mode text color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] section code {
+  background-color: var(--section-bg); /* Automatically adapts to dark mode */
+  color: var(--text-color);
+}
 
 /* Skills Section Hover Effect */
 .skills .card:hover {
