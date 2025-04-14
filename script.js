@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     darkModeToggle.style.bottom = "20px";
     darkModeToggle.style.right = "20px";
     darkModeToggle.style.padding = "10px 15px";
-    darkModeToggle.style.backgroundColor = "#000"; // Black background for light mode
+    darkModeToggle.style.backgroundColor = "#000";
     darkModeToggle.style.color = "#fff";
     darkModeToggle.style.border = "none";
     darkModeToggle.style.borderRadius = "5px";
@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check localStorage for dark mode state
     if (localStorage.getItem('darkMode') === 'enabled') {
         enableDarkMode();
+    } else {
+        disableDarkMode();
     }
 
     // Toggle dark mode functionality
@@ -34,73 +36,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function enableDarkMode() {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.style.backgroundColor = "#007bff"; // Blue background for dark mode
-        const elementsToToggle = document.querySelectorAll('.navbar, footer, section, .project, .skills, .socials, .menu-options');
-        elementsToToggle.forEach(element => {
-            element.classList.add('dark-mode');
-            if (element.classList.contains('navbar')) {
-                element.classList.remove('bg-light');
-                element.classList.add('bg-dark');
-            }
-            if (element.tagName === 'FOOTER') {
-                element.classList.add('bg-dark', 'text-light');
-                element.classList.remove('bg-light', 'text-dark');
-            }
+        document.body.classList.add('dark-mode'); // Apply dark mode to <body>
+        document.querySelectorAll('.form-control, .btn-success, .bg-light, .shadow-sm').forEach(el => {
+            el.classList.add('dark-mode');
         });
+        darkModeToggle.style.backgroundColor = "#007bff";
+        darkModeToggle.style.color = "#fff";
         localStorage.setItem('darkMode', 'enabled');
         darkModeToggle.textContent = "Light Mode";
     }
 
     function disableDarkMode() {
-        document.body.classList.remove('dark-mode');
-        darkModeToggle.style.backgroundColor = "#000"; // Black background for light mode
-        const elementsToToggle = document.querySelectorAll('.navbar, footer, section, .project, .skills, .socials, .menu-options');
-        elementsToToggle.forEach(element => {
-            element.classList.remove('dark-mode');
-            if (element.classList.contains('navbar')) {
-                element.classList.remove('bg-dark');
-                element.classList.add('bg-light');
-            }
-            if (element.tagName === 'FOOTER') {
-                element.classList.add('bg-light', 'text-dark');
-                element.classList.remove('bg-dark', 'text-light');
-            }
+        document.body.classList.remove('dark-mode'); // Remove dark mode from <body>
+        document.querySelectorAll('.form-control, .btn-success, .bg-light, .shadow-sm').forEach(el => {
+            el.classList.remove('dark-mode');
         });
+        darkModeToggle.style.backgroundColor = "#000";
+        darkModeToggle.style.color = "#fff";
         localStorage.setItem('darkMode', 'disabled');
         darkModeToggle.textContent = "Dark Mode";
     }
 
-    // Menu toggle functionality
+    // Mobile menu toggle functionality
     const menuToggle = document.querySelector('.menu-toggle');
-    menuToggle.style.backgroundColor = "#000"; // Black background for light mode
-    menuToggle.style.color = "#fff"; // White text for light mode
     const menuOptions = document.querySelector('.menu-options');
-
-    if (!menuToggle) {
-        console.warn('Menu toggle button not found in the DOM.');
-    }
-    if (!menuOptions) {
-        console.warn('Menu options container not found in the DOM.');
-    }
 
     if (menuToggle && menuOptions) {
         menuToggle.addEventListener('click', () => {
             menuOptions.classList.toggle('show');
-            menuToggle.classList.toggle('active'); // Update toggle button state
+            menuToggle.classList.toggle('active');
         });
+    } else {
+        console.warn('Menu toggle or menu options not found in the DOM.');
     }
 
-    // Close mobile menu when clicking outside or interacting with the dark mode button
+    // Close mobile menu when clicking outside
     document.addEventListener('click', (event) => {
-        const darkModeToggle = document.querySelector('button[style*="Dark Mode"]');
         if (
+            menuOptions &&
             menuOptions.classList.contains('show') &&
             !menuToggle.contains(event.target) &&
-            !menuOptions.contains(event.target) &&
-            (!darkModeToggle || !darkModeToggle.contains(event.target))
+            !menuOptions.contains(event.target)
         ) {
             menuOptions.classList.remove('show');
+            menuToggle.classList.remove('active');
         }
     });
 
