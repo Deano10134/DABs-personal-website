@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: Styling Your Web Pages</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Dean Baberowski</a>
+            <button class="navbar-toggler menu-toggle" type="button" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse menu-options" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactme.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 pt-5 dark-mode">
+        <article class="bg-white p-4 rounded shadow-sm dark-mode">
+            <h2 class="mb-3">CSS: Styling Your Web Pages</h2>
+            <p class="post-meta text-muted">Published on 14th April 2025 by Dean Baberowski</p>
+            <img src="./Images/CSS style.jpg" alt="CSS Styling" class="img-fluid rounded mb-4">
+            <section>
+                <h3>What is CSS?</h3>
+                <p>CSS stands for Cascading Style Sheets. It's the language we use to style an HTML document. CSS describes how HTML elements should be displayed.</p>
+            </section>
+            <section>
+                <h3>How to Add CSS</h3>
+                <p>There are three ways to insert CSS:</p>
+                <ol>
+                    <li><strong>Inline:</strong> Using the <code>style</code> attribute inside HTML elements.</li>
+                    <li><strong>Internal:</strong> Using a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section.</li>
+                    <li><strong>External:</strong> Using an external CSS file. This is the recommended way.</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Basic CSS Syntax</h3>
+                <p>A CSS rule set contains a selector and a declaration block:</p>
+                <pre>
+                    <code>
+selector {
+  property: value;
+}
+                    </code>
+                </pre>
+                <p>Example:</p>
+                <pre>
+                    <code>
+h1 {
+  color: blue;
+  font-size: 3em;
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>CSS Selectors</h3>
+                <p>Selectors are used to target the HTML elements you want to style.</p>
+                <ul>
+                    <li><strong>Element Selector:</strong> Selects elements based on the element name (e.g., <code>p</code>, <code>h1</code>, <code>div</code>).</li>
+                    <li><strong>ID Selector:</strong> Selects the element with the specified ID (e.g., <code>#myElement</code>).</li>
+                    <li><strong>Class Selector:</strong> Selects elements with the specified class (e.g., <code>.myClass</code>).</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Common CSS Properties</h3>
+                <ul>
+                    <li><code>color</code>: Sets the color of the text.</li>
+                    <li><code>font-size</code>: Sets the size of the text.</li>
+                    <li><code>background-color</code>: Sets the background color of an element.</li>
+                    <li><code>margin</code>: Sets the margin around an element.</li>
+                    <li><code>padding</code>: Sets the padding inside an element.</li>
+                </ul>
+            </section>
+        </article>
+
+        <aside class="mt-5 dark-mode">
+            <div class="bg-light p-4 rounded shadow-sm dark-mode">
+                <h3>About Dean Baberowski</h3>
+                <p>I am an IT professional with 4 years of experience in Cloud Engineering and software development. I am building this website to showcase my skills in HTML, CSS, and JavaScript with the help of Bootstrap. See my <a href="about.html">About page</a>.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer py-3" style="background-color: var(--navbar-bg); color: var(--navbar-text);">
+        <div class="container text-center">
+            <nav>
+                <ul class="footer-nav list-inline">
+                    <li class="list-inline-item"><a href="index.html" style="color: var(--navbar-text);">Home</a></li>
+                    <li class="list-inline-item"><a href="about.html" style="color: var(--navbar-text);">About</a></li>
+                    <li class="list-inline-item"><a href="blog.html" style="color: var(--navbar-text);">Blog</a></li>
+                    <li class="list-inline-item"><a href="contactme.html" style="color: var(--navbar-text);">Contact Me</a></li>
+                </ul>
+            </nav>
+            <p class="mt-2">&copy; 2025 Dean Baberowski's Personal Website. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Dark Mode</button>
+    <script src="script.js" defer></script>
+</body>
+</html>
