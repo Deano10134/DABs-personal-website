@@ -59,11 +59,11 @@ a:hover {
 }
 
 [data-theme="dark"] a {
-  color: #007bff; /* Blue color for links in dark mode */
+  color: #ffffff; /* white color for links in dark mode */
 }
 
 [data-theme="dark"] a:hover {
-  color: #0056b3; /* Slightly darker blue on hover */
+  color: #636363; /* Slightly grey on hover */
 }
 
 /* Navbar */
