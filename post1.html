@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top dark-mode">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: var(--navbar-bg); color: var(--navbar-text);">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Dean Baberowski</a>
-            <button class="navbar-toggler menu-toggle" type="button" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html" style="color: var(--navbar-text);">Dean Baberowski</a>
+            <button class="navbar-toggler menu-toggle" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: var(--navbar-bg); color: var(--navbar-text);">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse menu-options" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactme.html">Contact Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: var(--navbar-text);">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" style="color: var(--navbar-text);">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html" style="color: var(--navbar-text);">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactme.html" style="color: var(--navbar-text);">Contact Me</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container my-5 pt-5 dark-mode">
-        <article class="bg-white p-4 rounded shadow-sm dark-mode">
+    <main class="container my-5 pt-5">
+        <article class="p-4 rounded shadow-sm" style="background-color: var(--background-color); color: var(--text-color);">
             <h2 class="mb-3">The Future of AI</h2>
             <p class="post-meta text-muted">Published on 9th April 2025 by Dean Baberowski</p>
             <img src="./Images/what-is-ai.jpg" alt="The Future of AI" class="img-fluid rounded mb-4">
@@ -41,35 +41,35 @@
             <p> Leave a comment below, what is your thoughts of AI?</p>
             
             <h4 class="mt-5">Leave a Comment</h4>
-            <form id="comment-form" class="mt-3 dark-mode">
+            <form id="comment-form" class="mt-3">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" class="form-control dark-mode">
+                    <input type="text" id="name" name="name" class="form-control" style="background-color: var(--background-color); color: var(--text-color);">
                 </div>
                 <div class="form-group">
                     <label for="comment">Comment:</label>
-                    <textarea id="comment" name="comment" rows="4" class="form-control dark-mode"></textarea>
+                    <textarea id="comment" name="comment" rows="4" class="form-control" style="background-color: var(--background-color); color: var(--text-color);"></textarea>
                 </div>
-                <button type="submit" class="btn btn-success dark-mode">Submit Comment</button>
+                <button type="submit" class="btn btn-success">Submit Comment</button>
             </form>
         </article>
 
-        <aside class="mt-5 dark-mode">
-            <div class="bg-light p-4 rounded shadow-sm dark-mode">
+        <aside class="mt-5">
+            <div class="p-4 rounded shadow-sm" style="background-color: var(--background-color); color: var(--text-color);">
                 <h3>About Dean Baberowski</h3>
                 <p>I am an IT professional with 4 years of experience in Cloud Engineering and software development. I am building this website to showcase my skills in HTML, CSS, and JavaScript with the help of Bootstrap. See my <a href="about.html">About page</a>.</p>
             </div>
         </aside>
     </main>
 
-    <footer class="footer py-3 bg-dark text-white dark-mode">
+    <footer class="footer py-3" style="background-color: var(--navbar-bg); color: var(--navbar-text);">
         <div class="container text-center">
             <nav>
                 <ul class="footer-nav list-inline">
-                    <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-                    <li class="list-inline-item"><a href="about.html" class="text-white">About</a></li>
-                    <li class="list-inline-item"><a href="blog.html" class="text-white">Blog</a></li>
-                    <li class="list-inline-item"><a href="contactme.html" class="text-white">Contact Me</a></li>
+                    <li class="list-inline-item"><a href="index.html" style="color: var(--navbar-text);">Home</a></li>
+                    <li class="list-inline-item"><a href="about.html" style="color: var(--navbar-text);">About</a></li>
+                    <li class="list-inline-item"><a href="blog.html" style="color: var(--navbar-text);">Blog</a></li>
+                    <li class="list-inline-item"><a href="contactme.html" style="color: var(--navbar-text);">Contact Me</a></li>
                 </ul>
             </nav>
             <p class="mt-2">&copy; 2025 Dean Baberowski's Personal Website. All rights reserved.</p>

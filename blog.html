@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +29,8 @@
     </div>
   </nav>
 
+  <!-- Add dark mode toggle button -->
+  <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Dark Mode</button>
 
   <main>
     <section class="container mt-4">
@@ -76,6 +78,22 @@
     </div>
   </footer>
   <script src="script.js"></script>
-  <script src="script.js"></script>
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const htmlElement = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      htmlElement.setAttribute('data-theme', 'dark');
+      darkModeToggle.textContent = "Light Mode";
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      darkModeToggle.textContent = newTheme === 'dark' ? "Light Mode" : "Dark Mode";
+    });
+  </script>
 </body>
 </html>

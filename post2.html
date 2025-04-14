@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top dark-mode">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Dean Baberowski</a>
+            <button class="navbar-toggler menu-toggle" type="button" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse menu-options" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactme.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 pt-5 dark-mode">
+        <article class="bg-white p-4 rounded shadow-sm dark-mode">
+            <h2 class="mb-3">The Power of JavaScript</h2>
+            <p class="post-meta text-muted">Published on 14th April 2025 by Dean Baberowski</p>
+            <img src="./Images/javascript-power.jpg" alt="The Power of JavaScript" class="img-fluid rounded mb-4">
+            <p>JavaScript is one of the most versatile and widely-used programming languages in the world. It powers the dynamic behavior of websites, enabling developers to create interactive and engaging user experiences.</p>
+            <p>From humble beginnings as a simple scripting language for web browsers, JavaScript has evolved into a full-fledged programming language that supports object-oriented, functional, and event-driven programming paradigms. Its ecosystem has grown tremendously, with frameworks like React, Angular, and Vue.js revolutionizing front-end development.</p>
+            <p>JavaScript is not limited to the browser. With the advent of Node.js, it has become a powerful tool for server-side development, allowing developers to build scalable and high-performance applications. Additionally, JavaScript is used in mobile app development (React Native), desktop applications (Electron), and even IoT devices.</p>
+            <p>One of the key strengths of JavaScript is its vibrant community and extensive library ecosystem. Developers have access to countless libraries and tools that simplify complex tasks, from data visualization to state management.</p>
+            <p>However, JavaScript is not without its challenges. Its dynamic nature can lead to runtime errors, and managing asynchronous code can be tricky. Fortunately, tools like TypeScript and modern features like async/await have made JavaScript development more robust and developer-friendly.</p>
+            <p>In conclusion, JavaScript continues to be a cornerstone of modern web development. Its versatility and widespread adoption make it an essential skill for developers. Whether you're building a simple website or a complex application, JavaScript empowers you to bring your ideas to life.</p>
+            <p>What are your favorite JavaScript features or frameworks? Share your thoughts in the comments below!</p>
+            
+            <h4 class="mt-5">Leave a Comment</h4>
+            <form id="comment-form" class="mt-3 dark-mode">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control dark-mode">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" class="form-control dark-mode"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success dark-mode">Submit Comment</button>
+            </form>
+        </article>
+
+        <aside class="mt-5 dark-mode">
+            <div class="bg-light p-4 rounded shadow-sm dark-mode">
+                <h3>About Dean Baberowski</h3>
+                <p>I am an IT professional with 4 years of experience in Cloud Engineering and software development. I am building this website to showcase my skills in HTML, CSS, and JavaScript with the help of Bootstrap. See my <a href="about.html">About page</a>.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer py-3 bg-dark text-white dark-mode">
+        <div class="container text-center">
+            <nav>
+                <ul class="footer-nav list-inline">
+                    <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+                    <li class="list-inline-item"><a href="about.html" class="text-white">About</a></li>
+                    <li class="list-inline-item"><a href="blog.html" class="text-white">Blog</a></li>
+                    <li class="list-inline-item"><a href="contactme.html" class="text-white">Contact Me</a></li>
+                </ul>
+            </nav>
+            <p class="mt-2">&copy; 2025 Dean Baberowski's Personal Website. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Dark Mode</button>
+    <script src="script.js"></script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const toggleDarkModeClasses = () => {
+            document.querySelectorAll('.form-control, .btn-success, .bg-light, .shadow-sm, .menu-options, .footer, article, aside').forEach(el => {
+                el.classList.toggle('dark-mode');
+            });
+        };
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            toggleDarkModeClasses();
+            darkModeToggle.textContent = "Light Mode";
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleDarkModeClasses();
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = "Light Mode";
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.textContent = "Dark Mode";
+            }
+        });
+    </script>
+</body>
+</html>

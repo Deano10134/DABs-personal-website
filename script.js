@@ -36,25 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function enableDarkMode() {
-        document.body.classList.add('dark-mode'); // Apply dark mode to <body>
-        document.querySelectorAll('.form-control, .btn-success, .bg-light, .shadow-sm').forEach(el => {
-            el.classList.add('dark-mode');
-        });
-        darkModeToggle.style.backgroundColor = "#007bff";
-        darkModeToggle.style.color = "#fff";
-        localStorage.setItem('darkMode', 'enabled');
+        document.documentElement.setAttribute('data-theme', 'dark'); // Set data-theme to dark
+        localStorage.setItem('theme', 'dark');
         darkModeToggle.textContent = "Light Mode";
+        document.body.classList.add('dark-mode'); // Add dark-mode class to body
     }
 
     function disableDarkMode() {
-        document.body.classList.remove('dark-mode'); // Remove dark mode from <body>
-        document.querySelectorAll('.form-control, .btn-success, .bg-light, .shadow-sm').forEach(el => {
-            el.classList.remove('dark-mode');
-        });
-        darkModeToggle.style.backgroundColor = "#000";
-        darkModeToggle.style.color = "#fff";
-        localStorage.setItem('darkMode', 'disabled');
+        document.documentElement.setAttribute('data-theme', 'light'); // Set data-theme to light
+        localStorage.setItem('theme', 'light');
         darkModeToggle.textContent = "Dark Mode";
+        document.body.classList.remove('dark-mode'); // Remove dark-mode class from body
     }
 
     // Mobile menu toggle functionality
@@ -63,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && menuOptions) {
         menuToggle.addEventListener('click', () => {
-            menuOptions.classList.toggle('show');
-            menuToggle.classList.toggle('active');
+            menuOptions.classList.toggle('show'); // Toggle visibility of menu options
+            menuToggle.classList.toggle('active'); // Toggle active state of the button
         });
     } else {
         console.warn('Menu toggle or menu options not found in the DOM.');
@@ -78,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
             !menuToggle.contains(event.target) &&
             !menuOptions.contains(event.target)
         ) {
-            menuOptions.classList.remove('show');
-            menuToggle.classList.remove('active');
+            menuOptions.classList.remove('show'); // Hide menu options
+            menuToggle.classList.remove('active'); // Remove active state from the button
         }
     });
 
@@ -94,6 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
             form.classList.add('was-validated');
         }, false);
     });
+
+    // Apply data-theme attribute for dark and light modes on page load
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light mode
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    darkModeToggle.textContent = savedTheme === 'dark' ? "Light Mode" : "Dark Mode";
+
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
 });
 
 // Animate project cards on hover

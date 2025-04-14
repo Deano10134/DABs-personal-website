@@ -1,23 +1,39 @@
+:root {
+  --background-color: #ffffff; /* Light mode background */
+  --text-color: #212529; /* Light mode text */
+  --link-color: #007bff; /* Light mode link */
+  --navbar-bg: #f8f9fa; /* Light mode navbar background */
+  --navbar-text: #212529; /* Light mode navbar text */
+}
+
+[data-theme="dark"] {
+  --background-color: #121212; /* Dark mode background */
+  --text-color: #f8f9fa; /* Dark mode text */
+  --link-color: #5a5a5a; /* Dark mode link */
+  --navbar-bg: #343a40; /* Dark mode navbar background */
+  --navbar-text: #f8f9fa; /* Dark mode navbar text */
+}
+
 /* Base Styles */
 html, body {
   height: 100%;
-  background-color: #f8f9fa;
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #212529;
   margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for mode changes */
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
-
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--background-color); /* Default light mode background */
+  color: var(--text-color); /* Default light mode text color */
 }
 
-main {
-  flex: 1;
-}
+/* Removed redundant .dark-mode html, .dark-mode body selector */
 
 /* Containers */
 .container {
@@ -27,39 +43,60 @@ main {
 
 /* Links */
 a {
-  color: #007bff;
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #5a5a5a;
+  color: #0056b3;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #f8f9fa !important;
-  color: #212529;
+  background-color: var(--navbar-bg); /* Dynamic background color */
+  color: var(--navbar-text); /* Dynamic text color */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: #000 !important;
+  color: var(--navbar-text) !important; /* Dynamic link color */
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--link-color); /* Dynamic active link color */
 }
 
 .navbar .nav-link:hover {
+  color: var(--link-color); /* Dynamic hover color */
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+[data-theme="dark"] .navbar .nav-link,
+[data-theme="dark"] .navbar .navbar-brand {
+  color: #f8f9fa !important;
+}
+
+[data-theme="dark"] .navbar .nav-link.active {
   color: #007bff !important;
-  background-color: transparent;
 }
 
 /* Menu */
 .menu-options {
-  display: none;
+  display: none; /* Hidden by default */
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #ffffff;
+  background-color: var(--background-color); /* Use variable for light/dark mode */
+  color: var(--text-color); /* Use variable for light/dark mode */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 10px;
@@ -69,21 +106,30 @@ a:hover {
 }
 
 .menu-options.show {
-  display: block;
+  display: block; /* Show menu options when toggled */
 }
 
 .menu-toggle {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu-toggle.active {
-  background-color: #007bff;
+  background-color: var(--link-color);
   color: #fff;
+}
+
+.menu-options li a {
+  color: var(--text-color); /* Use variable for light/dark mode */
+}
+
+.menu-options li a:hover {
+  color: var(--link-color); /* Use variable for light/dark mode */
 }
 
 /* Layout Sections */
@@ -135,7 +181,8 @@ section {
 
 /* Footer */
 footer {
-  background-color: #f8f9fa;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
   padding: 20px;
   text-align: center;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
@@ -150,6 +197,31 @@ footer {
 
   .skills .card {
     margin-bottom: 10px;
+  }
+
+  .menu-options {
+    width: 100%;
+    position: fixed;
+    top: 60px; /* Adjust based on navbar height */
+    right: 0;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-options li {
+    padding: 10px 20px;
+  }
+
+  .menu-options li a {
+    display: block;
+    width: 100%;
+    color: var(--text-color);
+    text-align: left;
+  }
+
+  .menu-options li a:hover {
+    background-color: var(--link-color);
+    color: #fff;
   }
 }
 
@@ -223,12 +295,17 @@ footer {
 }
 
 .dark-mode .menu-options {
-  background-color: #343a40;
+  background-color: var(--navbar-bg); /* Use variable for dark mode */
+  color: var(--navbar-text); /* Use variable for dark mode */
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
+.dark-mode .menu-options li a {
+  color: var(--navbar-text); /* Use variable for dark mode */
+}
+
 .dark-mode .menu-options li a:hover {
-  color: #007bff;
+  color: var(--link-color); /* Use variable for dark mode */
 }
 
 .dark-mode .form-control {
@@ -286,4 +363,25 @@ footer {
 
 .dark-mode .menu-options li a {
   color: #f8f9fa;
+}
+
+.form-control {
+  background-color: #ffffff; /* Light mode input background */
+  color: #212529; /* Light mode input text color */
+  border: 1px solid #ced4da; /* Light mode border */
+}
+
+.form-control::placeholder {
+  color: #6c757d; /* Light mode placeholder color */
+}
+
+.btn-success {
+  background-color: #28a745; /* Light mode button background */
+  border-color: #28a745; /* Light mode button border */
+  color: #ffffff; /* Light mode button text */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Light mode button hover background */
+  border-color: #1e7e34; /* Light mode button hover border */
 }
