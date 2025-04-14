@@ -5,22 +5,15 @@ document.querySelector("body").appendChild(h2);
 
 // Ensure dark mode toggle button appears on all pages
 document.addEventListener('DOMContentLoaded', () => {
-    // Create dark mode toggle button
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.textContent = "Dark Mode";
-    darkModeToggle.style.position = "fixed";
-    darkModeToggle.style.bottom = "20px";
-    darkModeToggle.style.right = "20px";
-    darkModeToggle.style.padding = "10px 15px";
-    darkModeToggle.style.backgroundColor = "#000";
-    darkModeToggle.style.color = "#fff";
-    darkModeToggle.style.border = "none";
-    darkModeToggle.style.borderRadius = "5px";
-    darkModeToggle.style.cursor = "pointer";
-    document.body.appendChild(darkModeToggle);
+    // Dark mode toggle button
+    const darkModeToggle = document.getElementById('darkModeToggle');
 
     // Check localStorage for dark mode state
-    if (localStorage.getItem('theme') === 'dark') {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light mode
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    darkModeToggle.textContent = savedTheme === 'dark' ? "Light Mode" : "Dark Mode";
+
+    if (savedTheme === 'dark') {
         enableDarkMode();
     } else {
         disableDarkMode(); // Ensure light mode is enabled by default
@@ -35,24 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function updateDomElementsForTheme(isDarkMode) {
+        const navbarIcon = document.querySelector('.navbar-toggler-icon');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        if (navbarIcon) {
+            navbarIcon.style.filter = isDarkMode ? "invert(1)" : "invert(0)"; // Adjust icon
+        }
+        if (menuToggle) {
+            menuToggle.style.borderColor = isDarkMode ? "#f8f9fa" : "#007bff"; // Update border
+        }
+    }
+
     function enableDarkMode() {
         document.documentElement.setAttribute('data-theme', 'dark'); // Set data-theme to dark
         localStorage.setItem('theme', 'dark'); // Save dark mode state
         darkModeToggle.textContent = "Light Mode";
-        darkModeToggle.style.backgroundColor = "#007bff"; // Set blue background for dark mode toggle
+        darkModeToggle.classList.add('light-mode');
+        darkModeToggle.style.backgroundColor = "#007bff"; // Change background to blue
         document.body.classList.add('dark-mode'); // Add dark-mode class to body
-        const navbarIcon = document.querySelector('.navbar-toggler-icon');
-        if (navbarIcon) navbarIcon.style.filter = "invert(1)"; // Adjust icon for dark mode
+        updateDomElementsForTheme(true);
     }
 
     function disableDarkMode() {
         document.documentElement.setAttribute('data-theme', 'light'); // Set data-theme to light
         localStorage.setItem('theme', 'light'); // Save light mode state
         darkModeToggle.textContent = "Dark Mode";
-        darkModeToggle.style.backgroundColor = "#000"; // Reset to black background for light mode toggle
+        darkModeToggle.classList.remove('light-mode');
+        darkModeToggle.style.backgroundColor = "#000"; // Change background to black
         document.body.classList.remove('dark-mode'); // Remove dark-mode class from body
-        const navbarIcon = document.querySelector('.navbar-toggler-icon');
-        if (navbarIcon) navbarIcon.style.filter = "invert(0)"; // Adjust icon for light mode
+        updateDomElementsForTheme(false);
     }
 
     // Mobile menu toggle functionality
@@ -94,11 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Apply data-theme attribute for dark and light modes on page load
-    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light mode
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    darkModeToggle.textContent = savedTheme === 'dark' ? "Light Mode" : "Dark Mode";
-    darkModeToggle.style.backgroundColor = savedTheme === 'dark' ? "#007bff" : "#000"; // Set initial button background
-
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     } else {
@@ -141,7 +141,7 @@ function validateAndSubmit() {
 }
 
 // Admin flag (for demonstration purposes, set to true if the user is an admin)
-const isAdmin = true;
+const isAdmin = true; // Consider fetching this value dynamically from a server or authentication system
 
 // Handle comment submission
 function submitComment() {
