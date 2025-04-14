@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dean Baberowski's personal website showcasing skills in HTML, CSS, and JavaScript.">
+    <meta name="keywords" content="Dean Baberowski, JavaScript, HTML, CSS, Bootstrap, Web Development">
     <title>The Power of JavaScript</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Dean Baberowski</a>
-            <button class="navbar-toggler menu-toggle" type="button" aria-label="Toggle navigation">
+            <button class="navbar-toggler menu-toggle" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse menu-options" id="navbarNav">
@@ -57,13 +59,14 @@
             </div>
         </article>
 
-        <aside class="mt-5 dark-mode">
-            <div class="bg-light p-4 rounded shadow-sm dark-mode">
-                <h3>About Dean Baberowski</h3>
-                <p>I am an IT professional with 4 years of experience in Cloud Engineering and software development. I am building this website to showcase my skills in HTML, CSS, and JavaScript with the help of Bootstrap. See my <a href="about.html">About page</a>.</p>
-            </div>
-        </aside>
-    </main>
+     
+<aside class="mt-5">
+       <div class="p-4 rounded shadow-sm" style="background-color: var(--section-bg); color: var(--text-color);">
+         <h3>About Dean Baberowski</h3>
+         <p>I am an IT professional with 4 years of experience in Cloud Engineering and software development. I am building this website to showcase my skills in HTML, CSS, and JavaScript with the help of Bootstrap. See my <a href="about.html" style="color: var(--link-color);">About page</a>.</p>
+     </div>
+    </aside>
+    
 
     <footer class="footer py-3" style="background-color: var(--navbar-bg); color: var(--navbar-text);">
         <div class="container text-center">
@@ -79,6 +82,9 @@
         </div>
     </footer>
     <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Dark Mode</button>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>
