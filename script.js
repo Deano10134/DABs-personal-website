@@ -20,33 +20,39 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(darkModeToggle);
 
     // Check localStorage for dark mode state
-    if (localStorage.getItem('darkMode') === 'enabled') {
+    if (localStorage.getItem('theme') === 'dark') {
         enableDarkMode();
     } else {
-        disableDarkMode();
+        disableDarkMode(); // Ensure light mode is enabled by default
     }
 
     // Toggle dark mode functionality
     darkModeToggle.addEventListener('click', () => {
         if (document.body.classList.contains('dark-mode')) {
-            disableDarkMode();
+            disableDarkMode(); // Switch to light mode
         } else {
-            enableDarkMode();
+            enableDarkMode(); // Switch to dark mode
         }
     });
 
     function enableDarkMode() {
         document.documentElement.setAttribute('data-theme', 'dark'); // Set data-theme to dark
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('theme', 'dark'); // Save dark mode state
         darkModeToggle.textContent = "Light Mode";
+        darkModeToggle.style.backgroundColor = "#007bff"; // Set blue background for dark mode toggle
         document.body.classList.add('dark-mode'); // Add dark-mode class to body
+        const navbarIcon = document.querySelector('.navbar-toggler-icon');
+        if (navbarIcon) navbarIcon.style.filter = "invert(1)"; // Adjust icon for dark mode
     }
 
     function disableDarkMode() {
         document.documentElement.setAttribute('data-theme', 'light'); // Set data-theme to light
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem('theme', 'light'); // Save light mode state
         darkModeToggle.textContent = "Dark Mode";
+        darkModeToggle.style.backgroundColor = "#000"; // Reset to black background for light mode toggle
         document.body.classList.remove('dark-mode'); // Remove dark-mode class from body
+        const navbarIcon = document.querySelector('.navbar-toggler-icon');
+        if (navbarIcon) navbarIcon.style.filter = "invert(0)"; // Adjust icon for light mode
     }
 
     // Mobile menu toggle functionality
@@ -91,11 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light mode
     document.documentElement.setAttribute('data-theme', savedTheme);
     darkModeToggle.textContent = savedTheme === 'dark' ? "Light Mode" : "Dark Mode";
+    darkModeToggle.style.backgroundColor = savedTheme === 'dark' ? "#007bff" : "#000"; // Set initial button background
 
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     } else {
-        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('dark-mode'); // Ensure light mode is applied by default
     }
 });
 
@@ -131,4 +138,49 @@ function validateAndSubmit() {
     window.location.href = mailtoLink;
 
     return false;
+}
+
+// Admin flag (for demonstration purposes, set to true if the user is an admin)
+const isAdmin = true;
+
+// Handle comment submission
+function submitComment() {
+    const nameInput = document.getElementById('name');
+    const commentInput = document.getElementById('comment');
+    const commentsSection = document.getElementById('comments-section');
+
+    const name = nameInput.value.trim();
+    const comment = commentInput.value.trim();
+
+    if (!name || !comment) {
+        alert('Please fill out both the name and comment fields.');
+        return;
+    }
+
+    // Create a new comment element
+    const commentElement = document.createElement('div');
+    commentElement.classList.add('comment', 'p-3', 'mb-3', 'bg-light', 'rounded');
+    commentElement.innerHTML = `
+        <strong>${name}</strong>
+        <p>${comment}</p>
+    `;
+
+    // Add delete button if the user is an admin
+    if (isAdmin) {
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'ml-2');
+        deleteButton.style.float = 'right';
+        deleteButton.addEventListener('click', () => {
+            commentsSection.removeChild(commentElement);
+        });
+        commentElement.appendChild(deleteButton);
+    }
+
+    // Append the comment to the comments section
+    commentsSection.appendChild(commentElement);
+
+    // Clear the input fields
+    nameInput.value = '';
+    commentInput.value = '';
 }
