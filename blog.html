@@ -4,35 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Blog">
-    <!-- Load Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  
-    <!-- Load your custom CSS after Bootstrap -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Load Bootstrap CSS -->
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <!-- Load your custom CSS after Bootstrap -->
+  <link rel="stylesheet" href="style.css">
   <title>Blog</title>
   <script defer src="./script.js"></script>
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
+    <nav class="navbar">
+      <div class="container">
         <a class="navbar-brand" href="index.html">Dean Baberowski</a>
-        <button class="navbar-toggler menu-toggle" type="button" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          ☰
         </button>
-        <div class="collapse navbar-collapse menu-options" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="contactme.html">Contact Me</a></li>
-          </ul>
-        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contactme.html">Contact Me</a></li>
+        </ul>
       </div>
-    <!-- Add dark mode toggle button -->
-    <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Dark Mode</button>
+      <button id="darkModeToggle">Dark Mode</button>
+      <!-- Add dark mode toggle button -->
     </nav>
-    </header>
+  </header>
   <main>
     <section class="container mt-4">
       <h1 class="text-center">Blog</h1>
@@ -43,39 +40,39 @@
       <div class="row">
         <article class="col-md-4 blog-post">
           <h2>The future of AI</h2>
-            <p><small>Published on: 9th April 2025</small></p>
-            <p>The future of AI holds immense potential, from revolutionizing industries to enhancing daily life. Advances in machine learning, natural language processing, and robotics are paving the way for smarter, more efficient systems.</p>
+          <p><small>Published on: 9th April 2025</small></p>
+          <p>The future of AI holds immense potential, from revolutionizing industries to enhancing daily life. Advances in machine learning, natural language processing, and robotics are paving the way for smarter, more efficient systems.</p>
           <a href="post1.html" class="btn btn-primary">Read More</a>
         </article>
 
         <article class="col-md-4 blog-post">
-          <h2>Javascript</h2>
+          <h2>JavaScript</h2>
           <p><small>Published on: 10th April 2025</small></p>
-            <p>JavaScript is a versatile programming language that powers dynamic and interactive features on websites. It enables developers to create responsive user interfaces, handle events, and build complex web applications.</p>
+          <p>JavaScript is a versatile programming language that powers dynamic and interactive features on websites. It enables developers to create responsive user interfaces, handle events, and build complex web applications.</p>
           <a href="post2.html" class="btn btn-primary">Read More</a>
         </article>
 
         <article class="col-md-4 blog-post">
           <h2>CSS</h2>
           <p><small>Published on: 10th April 2025</small></p>
-            <p>CSS, or Cascading Style Sheets, is a cornerstone technology of web development. It allows developers to control the layout, design, and visual presentation of web pages, ensuring a consistent and appealing user experience across devices.</p>
+          <p>CSS, or Cascading Style Sheets, is a cornerstone technology of web development. It allows developers to control the layout, design, and visual presentation of web pages, ensuring a consistent and appealing user experience across devices.</p>
           <a href="post3.html" class="btn btn-primary">Read More</a>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer py-4">
-    <div class="container text-center">
+  <footer class="footer">
+    <div class="container">
       <nav>
-        <ul class="footer-nav list-inline">
-          <li class="list-inline-item"><a href="index.html">Home</a></li>
-          <li class="list-inline-item"><a href="about.html">About</a></li>
-          <li class="list-inline-item"><a href="blog.html">Blog</a></li>
-          <li class="list-inline-item"><a href="contactme.html">Contact Me</a></li>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contactme.html">Contact Me</a></li>
         </ul>
       </nav>
-      <p class="mt-3">&copy; 2025 Dean Baberowski's Personal Website. All rights reserved.</p>
+      <p>&copy; 2025 Dean Baberowski. All rights reserved.</p>
     </div>
   </footer>
 </body>
