@@ -1,1 +1,2 @@
 # My Personal Website
+Welcome to Dean Baberowski's personal website project. This site will showcase what skills I have and what I have learnt in a Software Engineering bootcamp course that I am doing. This site will be updated and improved as I progress throughout the course. Developers are welcome to contribute to it and help me bulid a great personal site.
