@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +7,15 @@
   <link rel="stylesheet" href="style.css">
   <title>Dean Baberowski's Personal Website</title>
 </head>
-
 <body>
-  <header> 
+  <header>
     <nav class="navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html">Dean Baberowski</a>
-        <div class="menu-container">
-          <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-            ☰
-          </button>
-        </div>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">Dark Mode</button>
+        <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+          ☰
+        </button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -26,68 +23,71 @@
           <li><a href="contactme.html">Contact Me</a></li>
         </ul>
       </div>
-    </nav>    
+    </nav>
   </header>
-
-  <!-- Dark Mode Toggle Button -->
-  <button id="darkModeToggle">Dark Mode</button>
 
   <main class="container">
     <section id="introduction">
-      <h1>Welcome</h1>
-      <p>Hello! I'm Dean Baberowski. I am a software engineer with a passion for web development and design.</p>
-      <p>I love creating beautiful and functional websites that provide a great user experience.</p>
-      <p>Feel free to explore my website and learn more about me and my work. Connect on 
-        <a href="https://www.linkedin.com/in/deanbaberowski">LinkedIn</a> or visit my <a href="contactme.html">Contact Me</a> page.</p>
+      <h1>Hi, I'm Dean Baberowski</h1>
+      <p>I'm a software engineer passionate about web development and design. I enjoy creating beautiful, functional websites with a strong focus on user experience.</p>
+      <p>Explore my website to learn more about me and my projects. Connect on <a href="https://www.linkedin.com/in/deanbaberowski">LinkedIn</a> or visit my <a href="contactme.html">Contact Me</a> page.</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <div class="project">
-        <h3>Project 1: Personal Website</h3>
-        <p>This is the personal website you are currently viewing. Built using HTML, CSS, and JavaScript.</p>
-        <a href="https://github.com/Deano10134" class="btn" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project">
-        <h3>Project 2: Coming Soon</h3>
-        <p>Description of project 2.</p>
-        <a href="#" class="btn">View Project</a>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>Personal Website</h3>
+          <p>You’re looking at it! Built with HTML, CSS, and JavaScript.</p>
+          <a href="https://github.com/Deano10134" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <div class="project coming-soon">
+          <h3>Project 2: Phase1- Project JavaScript Football search app</h3>
+          <a href="https://github.com/Deano10134/phase-1-project" target="_blank">View on Github</a>
+          <p>Stay tuned for more!</p>
+        </div>
       </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
       <div class="skills-grid">
-        <div class="skill-card">HTML</div>
-        <div class="skill-card">CSS</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">React</div>
-        <div class="skill-card">Node.js</div>
-        <div class="skill-card">Git</div>
+        <span class="skill-card">HTML</span>
+        <span class="skill-card">CSS</span>
+        <span class="skill-card">JavaScript</span>
+        <span class="skill-card">React</span>
+        <span class="skill-card">Node.js</span>
+        <span class="skill-card">Git</span>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Follow Me on My Socials:</h2>
+      <h2>Connect with Me</h2>
       <div class="social-links">
-        <a href="https://github.com/Deano10134"><img src="./Images/github-mark.png" alt="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/in/deanbaberowski"><img src="./Images/317750_linkedin_icon.png" alt="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/Deano10134" target="_blank" rel="noopener noreferrer">
+          <img src="./images/github-mark.png" alt="GitHub" width="24" height="24"> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/deanbaberowski" target="_blank" rel="noopener noreferrer">
+          <img src="./images/317750_linkedin_icon.png" alt="LinkedIn" width="24" height="24"> LinkedIn
+        </a>
+        <a href="https://medium.com/@deanbaberows" target="_blank" rel="noopener noreferrer">
+          <img src="./images/medium.png" alt="Medium" width="24" height="24"> Medium
+        </a>
       </div>
     </section>
   </main>
+  
   <footer class="footer">
     <div class="container">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contactme.html">Contact Me</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contactme.html">Contact Me</a></li>
+      </ul>
       <p>&copy; 2025 Dean Baberowski. All rights reserved.</p>
     </div>
-  </footer>  
-  <script src="script.js"></script>
+  </footer>
+  <script defer src="script.js"></script>
 </body>
 </html>
