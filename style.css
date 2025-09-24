@@ -40,6 +40,13 @@ body {
   min-height: 100vh;
 }
 
+/* Container to align content on all pages */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 /* Layout */
 .page-container {
   max-width: 1200px;
@@ -126,6 +133,13 @@ a:hover, a:focus {
   color: var(--link-color);
 }
 
+/* Navbar brand styling */
+.navbar .navbar-brand {
+  font-weight: 700;
+  color: var(--navbar-text);
+  text-decoration: none;
+}
+
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
@@ -152,9 +166,9 @@ a:hover, a:focus {
     flex-direction: column;
     background-color: var(--navbar-bg);
     position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 220px;
+    top: 100%;
+    right: 16px;
+    width: min(90vw, 260px);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
@@ -274,6 +288,35 @@ section {
   color: #fff;
 }
 
+/* Projects grid for better layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Responsive media */
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reusable button style */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: var(--link-color);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-2px);
+}
 
 /* Contact Form Container */
 .contact-form {
@@ -336,8 +379,6 @@ section {
     max-width: 90%;
   }
 }
-
-
 
 /* Footer */
 footer {
