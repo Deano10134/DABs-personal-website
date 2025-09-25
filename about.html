@@ -16,9 +16,11 @@
       <nav class="navbar">
         <div class="container">
           <a class="navbar-brand" href="index.html">Dean Baberowski</a>
-          <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-            ☰
-          </button>
+          <div class="navbar-controls">
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+              ☰
+            </button>
+          </div>
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -26,10 +28,9 @@
             <li><a href="contactme.html">Contact Me</a></li>
           </ul>
         </div>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
       </nav>
     </header>
-  <!-- Add dark mode toggle button -->
-  <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Dark Mode</button>
 
     <main class="about container my-5">
       <section>
