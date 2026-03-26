@@ -20,6 +20,7 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="cv.html">CV</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contactme.html">Contact Me</a></li>
         </ul>
@@ -28,54 +29,154 @@
     </nav>
   </header>
 
-  <main class="container">
-    <section id="introduction">
-      <h1>Hi, I'm Dean Baberowski</h1>
-      <p>I'm a software engineer passionate about web development and design. I enjoy creating beautiful, functional websites with a strong focus on user experience.</p>
-      <p>Explore my website to learn more about me and my projects. Connect on <a href="https://www.linkedin.com/in/deanbaberowski">LinkedIn</a> or visit my <a href="contactme.html">Contact Me</a> page.</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project">
-          <h3>Personal Website</h3>
-          <p>You’re looking at it! Built with HTML, CSS, and JavaScript.</p>
-          <a href="https://github.com/Deano10134" class="btn" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-        <div class="project">
-          <h3>Project 2: Phase 1- Project JavaScript Football search app</h3>
-          <p> This football search app showcases my skills in HTML/CSS and JavaScript and what I learnt in Phase 1 of the course. View it on GitHub for more information.</p>
-          <a href="https://github.com/Deano10134/phase-1-project" class="btn" target="_blank" rel="noopener">View on Github</a>               
-          <p>Stay tuned for more!</p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Hi, I'm <span class="highlight">Dean Baberowski</span></h1>
+            <p class="hero-subtitle">Cloud Engineer transitioning to Full-Stack Developer</p>
+            <p class="hero-description">I'm passionate about building scalable cloud infrastructure and creating beautiful, functional web applications. Currently learning modern web development while leveraging my 4 years of cloud engineering experience.</p>
+            <div class="hero-buttons">
+              <a href="cv.html" class="btn btn-primary">View My CV</a>
+              <a href="contactme.html" class="btn btn-outline">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="profile-photo">
+              <img src="./images/Profile_picture.png" alt="Dean Baberowski" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <span class="skill-card">HTML</span>
-        <span class="skill-card">CSS</span>
-        <span class="skill-card">JavaScript</span>
-        <span class="skill-card">React</span>
-        <span class="skill-card">Node.js</span>
-        <span class="skill-card">Git</span>
+    <!-- About Preview Section -->
+    <section class="about-preview">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="card-icon">☁️</div>
+            <h3>Cloud Engineering</h3>
+            <p>4 years of experience with Azure and AWS, specializing in Infrastructure as Code and automation.</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">💻</div>
+            <h3>Web Development</h3>
+            <p>Currently mastering modern web technologies including React, JavaScript, and full-stack development.</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">🚀</div>
+            <h3>Innovation</h3>
+            <p>Passionate about integrating AI services and building scalable solutions that make a difference.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Connect with Me</h2>
-      <div class="social-links">
-        <a href="https://github.com/Deano10134" target="_blank" rel="noopener noreferrer">
-          <img src="./images/github-mark.png" alt="GitHub" width="24" height="24"> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/deanbaberowski" target="_blank" rel="noopener noreferrer">
-          <img src="./images/317750_linkedin_icon.png" alt="LinkedIn" width="24" height="24"> LinkedIn
-        </a>
-        <a href="https://medium.com/@deanbaberows" target="_blank" rel="noopener noreferrer">
-          <img src="./images/medium.png" alt="Medium" width="24" height="24"> Medium
-        </a>
+    <!-- Featured Projects Section -->
+    <section class="featured-projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <p class="section-description">Here are some of my recent projects that showcase my skills and interests.</p>
+        <div class="projects-grid">
+          <div class="project featured">
+            <div class="project-image">
+              <div class="project-placeholder">🌐</div>
+            </div>
+            <div class="project-content">
+              <h3>Personal Website</h3>
+              <p>A responsive personal portfolio built with HTML, CSS, and JavaScript. Features dark mode, mobile-first design, and semantic markup.</p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <a href="https://github.com/Deano10134" class="btn btn-small" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-image">
+              <div class="project-placeholder">⚽</div>
+            </div>
+            <div class="project-content">
+              <h3>Football Search App</h3>
+              <p>A JavaScript application that demonstrates API integration and DOM manipulation. Built during my Phase 1 studies.</p>
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+              <a href="https://github.com/Deano10134/phase-1-project" class="btn btn-small" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="projects-cta">
+          <p>Interested in seeing more of my work?</p>
+          <a href="#" class="btn btn-outline">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Overview -->
+    <section class="skills-overview">
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-categories">
+          <div class="skill-group">
+            <h3>Cloud & Infrastructure</h3>
+            <div class="skills-list">
+              <span class="skill-item">Azure</span>
+              <span class="skill-item">AWS</span>
+              <span class="skill-item">Terraform</span>
+              <span class="skill-item">ServiceNow</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Web Development</h3>
+            <div class="skills-list">
+              <span class="skill-item">JavaScript</span>
+              <span class="skill-item">HTML/CSS</span>
+              <span class="skill-item">React</span>
+              <span class="skill-item">Node.js</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Tools & Others</h3>
+            <div class="skills-list">
+              <span class="skill-item">Git</span>
+              <span class="skill-item">GitHub</span>
+              <span class="skill-item">VS Code</span>
+              <span class="skill-item">Agile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Let's Work Together</h2>
+          <p>I'm always interested in new opportunities and interesting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+          <div class="contact-options">
+            <a href="contactme.html" class="btn btn-primary">Send a Message</a>
+            <div class="social-links">
+              <a href="https://github.com/Deano10134" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <img src="./images/github-mark.png" alt="GitHub" width="24" height="24">
+              </a>
+              <a href="https://www.linkedin.com/in/deanbaberowski" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <img src="./images/317750_linkedin_icon.png" alt="LinkedIn" width="24" height="24">
+              </a>
+              <a href="https://medium.com/@deanbaberows" target="_blank" rel="noopener noreferrer" title="Medium">
+                <img src="./images/medium.png" alt="Medium" width="24" height="24">
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -85,6 +186,7 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="cv.html">CV</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contactme.html">Contact Me</a></li>
       </ul>
