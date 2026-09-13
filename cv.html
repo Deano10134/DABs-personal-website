@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dean Baberowski's Professional CV - Cloud Engineer & Software Developer">
+  <meta name="description" content="Dean Baberowski's Interactive CV - Cloud Engineer & Software Developer">
   <link rel="stylesheet" href="style.css">
-  <title>Dean Baberowski - CV</title>
+  <title>Dean Baberowski - Interactive CV</title>
 </head>
 <body>
   <header>
@@ -21,7 +21,7 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="cv.html">CV</a></li>
+          <li><a href="cv.html" class="active">CV</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contactme.html">Contact Me</a></li>
         </ul>
@@ -29,82 +29,443 @@
     </nav>
   </header>
 
-  <main class="container">
-    <section class="cv-header">
-      <div class="cv-download">
-        <h1>Dean Baberowski</h1>
-        <p class="cv-subtitle">Cloud Engineer & Software Developer</p>
-        <button class="btn" onclick="window.print()">📄 Download CV</button>
+  <main class="container cv-page-container">
+    <section class="cv-header-interactive">
+      <div class="cv-header-grid">
+        <div class="cv-profile-text">
+          <h1>Dean Baberowski</h1>
+          <p class="cv-subtitle">Cloud Engineer &amp; Software Developer</p>
+          <div class="cv-actions">
+            <button class="btn btn-primary btn-icon" onclick="window.print()" title="Download a clean PDF-formatted CV">
+              <span>📄</span> Print / Download PDF
+            </button>
+            <button class="btn btn-outline btn-icon" id="toggle-all-details">
+              <span>↕️</span> <span id="toggle-details-text">Expand All Sections</span>
+            </button>
+          </div>
+        </div>
+        <div class="cv-quick-contact">
+          <div class="contact-card">
+            <h4>Quick Connections</h4>
+            <ul class="contact-list-interactive">
+              <li class="contact-item-interactive" title="Click to copy email address">
+                <span class="icon">📧</span>
+                <span class="text" id="email-text">deanbaberows@gmail.com</span>
+                <button class="copy-btn" data-copy="deanbaberows@gmail.com" aria-label="Copy Email">📋</button>
+              </li>
+              <li class="contact-item-interactive">
+                <span class="icon">🔗</span>
+                <a href="https://www.linkedin.com/in/deanbaberowski" target="_blank" rel="noopener">linkedin.com/in/deanbaberowski</a>
+              </li>
+              <li class="contact-item-interactive">
+                <span class="icon">💻</span>
+                <a href="https://github.com/Deano10134" target="_blank" rel="noopener">github.com/Deano10134</a>
+              </li>
+              <li class="contact-item-interactive">
+                <span class="icon">📝</span>
+                <a href="https://medium.com/@deanbaberows" target="_blank" rel="noopener">medium.com/@deanbaberows</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="cv-section">
+    <!-- Interactive Dashboard: Filter & Search Controls -->
+    <section class="cv-dashboard shadow-sm">
+      <div class="dashboard-title">
+        <h3>🔍 Interactive CV Workspace</h3>
+        <p class="text-muted">Use the filters, search bar, and tabs to explore my profile.</p>
+      </div>
+      
+      <div class="cv-controls-grid">
+        <!-- Tab Selectors -->
+        <div class="cv-tabs-container">
+          <span class="controls-heading">Sections:</span>
+          <div class="cv-tabs">
+            <button class="cv-tab-btn active" data-section="all">All</button>
+            <button class="cv-tab-btn" data-section="summary">Summary</button>
+            <button class="cv-tab-btn" data-section="experience">Experience</button>
+            <button class="cv-tab-btn" data-section="skills">Skills</button>
+            <button class="cv-tab-btn" data-section="education">Education</button>
+          </div>
+        </div>
+
+        <!-- Role Focus Filters -->
+        <div class="cv-filters-container">
+          <span class="controls-heading">Role Focus:</span>
+          <div class="cv-filters">
+            <button class="filter-btn active" data-focus="all">All Specs</button>
+            <button class="filter-btn" data-focus="cloud">Cloud / DevOps</button>
+            <button class="filter-btn" data-focus="web">Web Dev</button>
+          </div>
+        </div>
+
+        <!-- Interactive Search -->
+        <div class="cv-search-container">
+          <label for="cv-search" class="controls-heading">Live Search:</label>
+          <div class="search-input-wrapper">
+            <input type="text" id="cv-search" placeholder="Type a tool, tech, or skill (e.g., AWS, Terraform)..." aria-label="Search my résumé">
+            <span class="search-status-counter" id="search-count"></span>
+            <button id="clear-search" class="clear-search-btn" aria-label="Clear Search">✖</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Summary Section -->
+    <section class="cv-section" id="section-summary" data-focus-area="all cloud web">
       <h2>Professional Summary</h2>
-      <p>Cloud Engineer with 4 years of experience in deploying and managing cloud infrastructure on Azure and AWS platforms. Specialized in Infrastructure as Code (IaC), automation workflows, and AI service integration. Passionate about transitioning to full-stack development with expertise in modern web technologies.</p>
+      <div class="summary-interactive-content">
+        <p>
+          Highly motivated and versatile <strong>Cloud Engineer</strong> with 4 years of hands-on experience in provisioning, managing, and automating cloud infrastructure across Microsoft Azure and AWS ecosystems. Proven expertise in <strong>Infrastructure as Code (IaC)</strong> solutions using Terraform, managing automation scripting, and establishing seamless integrations with ServiceNow.
+        </p>
+        <p class="mt-2 text-highlight-pillar-cloud" data-pillar="cloud">
+          ☁️ <strong>Cloud &amp; DevOps Specialty:</strong> Passionate about security, high availability, containerization, and integrating cutting-edge services like Azure OpenAI.
+        </p>
+        <p class="mt-2 text-highlight-pillar-web" data-pillar="web">
+          💻 <strong>Software Development Focus:</strong> Expanding on solid engineering foundations by mastering full-stack web architectures (React, JavaScript, Node.js) to bridge cloud infrastructure and application development.
+        </p>
+      </div>
     </section>
 
-    <section class="cv-section">
+    <!-- Work Experience Section -->
+    <section class="cv-section" id="section-experience">
       <h2>Work Experience</h2>
-      <div class="experience-item">
-        <h3>Cloud Engineer</h3>
-        <p class="company-period">Previous Company • 2020 - 2024</p>
-        <ul>
-          <li>Deployed Azure OpenAI services using Terraform, ensuring consistent and repeatable infrastructure provisioning</li>
-          <li>Worked on ServiceNow integration project, automating workflows and streamlining IT service management processes</li>
-          <li>Integrated ServiceNow with various cloud services to enhance operational efficiency</li>
-          <li>Maintained robust security and compliance standards across cloud environments</li>
-          <li>Utilized Infrastructure as Code (IaC) tools to build and deploy scalable cloud solutions</li>
-        </ul>
+      <div class="timeline-interactive">
+        
+        <!-- Experience Item 1 -->
+        <div class="timeline-item" data-focus-area="cloud" data-keywords="cloud engineer azure openai terraform servicenow orchestration iac automation cloud infrastructure security integration">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header" onclick="toggleTimelineItem(this)">
+              <div class="timeline-header-text">
+                <h3>Cloud Engineer</h3>
+                <h4 class="company-name">Previous Company</h4>
+                <p class="timeline-period">2022 - 2024</p>
+              </div>
+              <button class="accordion-toggle" aria-label="Expand achievements">
+                <span class="chevron">▼</span>
+              </button>
+            </div>
+            
+            <div class="timeline-body-collapsible show-initially">
+              <div class="role-impact-metric-grid">
+                <div class="metric-card">
+                  <span class="metric-num">100%</span>
+                  <span class="metric-label">IaC Provisioned OpenAI</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-num">Multiple</span>
+                  <span class="metric-label">ServiceNow Integrations</span>
+                </div>
+              </div>
+
+              <ul>
+                <li data-keywords="azure openai terraform iac">
+                  Deployed advanced <strong>Azure OpenAI services</strong> programmatically using <strong>Terraform</strong>, securing reliable and automated repeatable configurations across staging and production workspaces.
+                </li>
+                <li data-keywords="servicenow workflow automation integration">
+                  Spearheaded a pivotal <strong>ServiceNow Integration Initiative</strong>, building customized workflows to automate repetitive IT operations, ticket generation, and resources provisioning.
+                </li>
+                <li data-keywords="cloud integration servicenow api">
+                  Integrated diverse cloud-native platform APIs into <strong>ServiceNow</strong>, bolstering productivity metrics and eliminating operational silos between teams.
+                </li>
+                <li data-keywords="security compliance cyber cloud environment">
+                  Enforced robust enterprise security postures and strict regulatory compliance requirements using cloud guards, IAM restrictions, and automated policies.
+                </li>
+                <li data-keywords="iac terraform scaling infrastructure">
+                  Crafted high-fidelity multi-stage Infrastructure as Code models to effortlessly scale systems and eliminate environment drift.
+                </li>
+              </ul>
+              
+              <div class="timeline-tech-tags">
+                <span class="skill-bubble-ref" data-skill="azure">Azure</span>
+                <span class="skill-bubble-ref" data-skill="terraform">Terraform</span>
+                <span class="skill-bubble-ref" data-skill="servicenow">ServiceNow</span>
+                <span class="skill-bubble-ref" data-skill="git">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="timeline-item" data-focus-area="cloud" data-keywords="cloud systems administrator aws azure infrastructure cost optimization deployment python backups scripting monitoring operations support">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header" onclick="toggleTimelineItem(this)">
+              <div class="timeline-header-text">
+                <h3>Cloud Systems Administrator</h3>
+                <h4 class="company-name">Previous Company</h4>
+                <p class="timeline-period">2020 - 2022</p>
+              </div>
+              <button class="accordion-toggle" aria-label="Expand achievements">
+                <span class="chevron">▲</span>
+              </button>
+            </div>
+            
+            <div class="timeline-body-collapsible">
+              <div class="role-impact-metric-grid">
+                <div class="metric-card">
+                  <span class="metric-num">30%</span>
+                  <span class="metric-label">Operational Workload Cut</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-num">AWS/Azure</span>
+                  <span class="metric-label">Hybrid Environments</span>
+                </div>
+              </div>
+
+              <ul>
+                <li data-keywords="aws azure monitoring administration">
+                  Proactively managed hybrid <strong>AWS</strong> and <strong>Azure</strong> environments, monitoring resources utilization and minimizing critical service disruptions through proactive log analysis.
+                </li>
+                <li data-keywords="scripting python powershell automation workload">
+                  Automated complex system tasks and backup routines using <strong>Python</strong> and command-line scripts, trimming manual administration work by over 8 hours weekly.
+                </li>
+                <li data-keywords="backups disaster recovery high availability">
+                  Designed, validated, and optimized rigorous backup strategies and disaster-recovery models, maximizing business continuity and security.
+                </li>
+                <li data-keywords="support cost optimization azure-advisor">
+                  Spearheaded infrastructure review audits to find and prune underutilized instances, achieving sustainable <strong>cost savings of 15%</strong>.
+                </li>
+              </ul>
+              
+              <div class="timeline-tech-tags">
+                <span class="skill-bubble-ref" data-skill="aws">AWS</span>
+                <span class="skill-bubble-ref" data-skill="azure">Azure</span>
+                <span class="skill-bubble-ref" data-skill="git">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="cv-section">
-      <h2>Technical Skills</h2>
-      <div class="skills-categories">
-        <div class="skill-category">
-          <h3>Cloud Platforms</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Azure</span>
-            <span class="skill-tag">AWS</span>
+    <!-- Technical Skills Section -->
+    <section class="cv-section" id="section-skills">
+      <h2>Technical Skills &amp; Proficiencies</h2>
+      <p class="text-muted mb-4">Click on any skill card below to view details and highlight experience where it was utilized on this page!</p>
+      
+      <!-- Live Skills Filtering Categories -->
+      <div class="skills-category-filters">
+        <button class="skill-cat-btn active" data-skill-cat="all">All Tech</button>
+        <button class="skill-cat-btn" data-skill-cat="cloud">Cloud Platforms</button>
+        <button class="skill-cat-btn" data-skill-cat="devops">Infrastructure &amp; DevOps</button>
+        <button class="skill-cat-btn" data-skill-cat="web">Web Development</button>
+      </div>
+
+      <div class="skills-interactive-grid" id="skills-grid">
+        
+        <!-- Azure -->
+        <div class="skill-card-interactive" data-skill-id="azure" data-category="cloud" data-keywords="azure cloud open-ai terraform deployment">
+          <div class="skill-card-header">
+            <h4>Microsoft Azure</h4>
+            <span class="proficiency-tag expert">Expert</span>
           </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="90%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Advanced cloud architectures. Special focus on Terraform integration, networking, IAM, and Azure OpenAI infrastructure.</p>
+          <div class="skill-highlight-target">Applied in: Cloud Engineer &amp; Cloud Systems Administrator roles</div>
         </div>
-        <div class="skill-category">
-          <h3>Infrastructure & DevOps</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Terraform</span>
-            <span class="skill-tag">ServiceNow</span>
-            <span class="skill-tag">Git</span>
+
+        <!-- AWS -->
+        <div class="skill-card-interactive" data-skill-id="aws" data-category="cloud" data-keywords="aws cloud systems administrator monitoring backups S3 EC2">
+          <div class="skill-card-header">
+            <h4>Amazon Web Services (AWS)</h4>
+            <span class="proficiency-tag advanced">Advanced</span>
           </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="75%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Managing S3 buckets, compute instances (EC2), virtual private networks (VPCs), and automated backup scripts.</p>
+          <div class="skill-highlight-target">Applied in: Cloud Systems Administrator role</div>
         </div>
-        <div class="skill-category">
-          <h3>Web Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
+
+        <!-- Terraform -->
+        <div class="skill-card-interactive" data-skill-id="terraform" data-category="devops" data-keywords="terraform iac infrastructure as code devops azure deployment">
+          <div class="skill-card-header">
+            <h4>Terraform (IaC)</h4>
+            <span class="proficiency-tag expert">Expert</span>
           </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="95%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Building fully automated environments, declarative deployments, and state management files. Absolute consistency.</p>
+          <div class="skill-highlight-target">Applied in: Deployed Azure OpenAI and structured multi-stage setups</div>
+        </div>
+
+        <!-- ServiceNow -->
+        <div class="skill-card-interactive" data-skill-id="servicenow" data-category="devops" data-keywords="servicenow workflow integration api automation operations">
+          <div class="skill-card-header">
+            <h4>ServiceNow</h4>
+            <span class="proficiency-tag expert">Expert</span>
+          </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="85%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Enterprise system workflow design, automating ticket generation and linking cloud infrastructure to ServiceNow APIs.</p>
+          <div class="skill-highlight-target">Applied in: ServiceNow Integration Project</div>
+        </div>
+
+        <!-- Git -->
+        <div class="skill-card-interactive" data-skill-id="git" data-category="devops" data-keywords="git version control github collaborative flow merge conflict">
+          <div class="skill-card-header">
+            <h4>Git &amp; Version Control</h4>
+            <span class="proficiency-tag expert">Expert</span>
+          </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="90%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Branching models (Git Flow), trunk-based workflow, merge management, review pipelines across GitHub and ADO.</p>
+          <div class="skill-highlight-target">Applied across all development and infrastructure repositories</div>
+        </div>
+
+        <!-- HTML/CSS -->
+        <div class="skill-card-interactive" data-skill-id="html-css" data-category="web" data-keywords="html css responsive style bootstrap layout web dev design flexbox css-grid text">
+          <div class="skill-card-header">
+            <h4>HTML &amp; CSS</h4>
+            <span class="proficiency-tag advanced">Advanced</span>
+          </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="90%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Responsive layouts with Flexbox and CSS Grid. Deep styling customizations, dark theme operations, and Bootstrap frameworks.</p>
+          <div class="skill-highlight-target">Applied in: Portfolio site development, custom web app frontends</div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card-interactive" data-skill-id="javascript" data-category="web" data-keywords="javascript frontend dynamic web programming es6 dom api-integration event listener">
+          <div class="skill-card-header">
+            <h4>Modern JavaScript (ES6+)</h4>
+            <span class="proficiency-tag advanced">Advanced</span>
+          </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="85%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Asynchronous event loops, DOM manipulation, promises, fetch API requests, state management, and interaction handlers.</p>
+          <div class="skill-highlight-target">Applied in: Dynamic CV filters, comments systems, and client interfaces</div>
+        </div>
+
+        <!-- React -->
+        <div class="skill-card-interactive" data-skill-id="react" data-category="web" data-keywords="react components hooks frontend state dashboard spa single-page">
+          <div class="skill-card-header">
+            <h4>React.js</h4>
+            <span class="proficiency-tag beginner">Intermediate</span>
+          </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="70%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Component hierarchy, functional structures, custom Hooks, global context states, dynamic list renders, and routing mechanisms.</p>
+          <div class="skill-highlight-target">Applied in: Bootcamp projects and full-stack proof-of-concepts</div>
+        </div>
+
+        <!-- Node.js -->
+        <div class="skill-card-interactive" data-skill-id="node" data-category="web" data-keywords="node backend servers express api database endpoint rest">
+          <div class="skill-card-header">
+            <h4>Node.js &amp; Express</h4>
+            <span class="proficiency-tag beginner">Intermediate</span>
+          </div>
+          <div class="skill-level-meter">
+            <div class="skill-progress" data-width="65%" style="width: 0%"></div>
+          </div>
+          <p class="skill-card-desc">Handling server configurations, REST API design, middleware parameters, routing controls, and database controllers.</p>
+          <div class="skill-highlight-target">Applied in: Full-stack bootcamp challenge servers and helper scripts</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="cv-section" id="section-education">
+      <h2>Education &amp; Credentials</h2>
+      <div class="education-grid">
+        
+        <div class="education-card-interactive" data-keywords="software engineering bootcamp flatiron school react node development full-stack">
+          <h3>Full-Stack Software Engineering</h3>
+          <p class="institution-period">Flatiron School • 2024 - Present</p>
+          <p class="desc">Rigorous web dev incubator prioritizing modern frameworks (React.js, Node/Express), SQL databases, RESTful endpoints architectures, and complex software design methodologies.</p>
+        </div>
+
+        <div class="education-card-interactive certifications" data-keywords="credentials azure security aws devops associate architect">
+          <h3>Credentials &amp; Certifications</h3>
+          <ul class="cert-interactive-list">
+            <li>
+              <span class="cert-badge">Microsoft Tech</span>
+              <strong>Azure Solutions Architect Expert / Admin Associate</strong>
+            </li>
+            <li>
+              <span class="cert-badge">Amazon Tech</span>
+              <strong>AWS Certified Solutions Architect – Associate</strong>
+            </li>
+            <li>
+              <span class="cert-badge">Agile Tech</span>
+              <strong>Scrum Alliance Certified ScrumMaster (CSM)</strong>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Interactive Connection Sandbox -->
+    <section class="cv-section sandbox-section print-hide" id="section-sandbox" data-focus-area="all cloud web">
+      <h2>Interactive Connection Sandbox</h2>
+      <p class="text-muted">Test the interaction of Dean's cloud background and web skills in real-time by generating a dynamic "Cloud + Web Deployment Plan" below!</p>
+      
+      <div class="sandbox-container">
+        <div class="sandbox-controls">
+          <div class="sandbox-field">
+            <label for="sandbox-app-type">Choose Application Type:</label>
+            <select id="sandbox-app-type" class="form-control-interactive">
+              <option value="react-app">Modern React SPA Frontend</option>
+              <option value="node-api">Express Node.js REST API</option>
+              <option value="openai-integration">Cognitive AI / Azure OpenAI Assistant Service</option>
+            </select>
+          </div>
+          
+          <div class="sandbox-field">
+            <label for="sandbox-cloud-platform">Target Infrastructure Platform:</label>
+            <select id="sandbox-cloud-platform" class="form-control-interactive">
+              <option value="azure-terraform">Microsoft Azure (via Terraform IaC)</option>
+              <option value="aws-systems">Amazon Web Services (AWS Architecture)</option>
+            </select>
+          </div>
+
+          <button id="generate-deployment-btn" class="btn btn-success w-100 mt-2">🛠️ Simulate Deployment Orchestration</button>
+        </div>
+
+        <div class="sandbox-console">
+          <div class="console-header">
+            <span class="console-dot red"></span>
+            <span class="console-dot yellow"></span>
+            <span class="console-dot green"></span>
+            <span class="console-title">Dean's IaC DevOps Simulator</span>
+          </div>
+          <pre class="console-body" id="sandbox-console-output">Select options above and click simulate to trigger automated IaC generation...</pre>
         </div>
       </div>
     </section>
 
-    <section class="cv-section">
-      <h2>Education & Certifications</h2>
-      <div class="education-item">
-        <h3>Software Engineering Bootcamp</h3>
-        <p class="institution-period">Flatiron School • 2024 - Present</p>
-        <p>Full-stack web development program focusing on modern JavaScript frameworks and best practices</p>
-      </div>
-    </section>
-
-    <section class="cv-section">
-      <h2>Contact Information</h2>
-      <div class="contact-info">
-        <p>📧 Email: Available upon request</p>
-        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/deanbaberowski" target="_blank">linkedin.com/in/deanbaberowski</a></p>
-        <p>💻 GitHub: <a href="https://github.com/Deano10134" target="_blank">github.com/Deano10134</a></p>
-        <p>📝 Blog: <a href="https://medium.com/@deanbaberows" target="_blank">medium.com/@deanbaberows</a></p>
+    <!-- Interactive Contact Center -->
+    <section class="cv-section" id="section-contact">
+      <h2>Contact Information Centre</h2>
+      <p class="text-muted">Feel free to connect or ask for references using any of these channels.</p>
+      
+      <div class="contact-grid-interactive">
+        <div class="contact-info">
+          <p>📧 Email: <strong id="clickable-email" class="copyable-text" title="Click to copy to clipboard">deanbaberows@gmail.com</strong> <button class="btn-micro" data-copy="deanbaberows@gmail.com">Copy</button></p>
+          <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/deanbaberowski" target="_blank" rel="noopener">linkedin.com/in/deanbaberowski</a></p>
+          <p>💻 GitHub: <a href="https://github.com/Deano10134" target="_blank" rel="noopener">github.com/Deano10134</a></p>
+          <p>📝 Medium Blog: <a href="https://medium.com/@deanbaberows" target="_blank" rel="noopener">medium.com/@deanbaberows</a></p>
+        </div>
+        <div class="contact-prompt-interactive">
+          <p class="announcement-badge">Ready for Hire</p>
+          <p>Currently open to Cloud Dev, Platform Operations, DevOps, and Full-Stack Engineering roles. Based in the UK (with remote and hybrid flexibility).</p>
+          <a href="contactme.html" class="btn btn-primary mt-3">📬 Submit In-Depth Query</a>
+        </div>
       </div>
     </section>
   </main>
@@ -121,6 +482,11 @@
       <p>&copy; 2025 Dean Baberowski. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Toast Notification element for copy states -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Note: script defer is loaded, but it relies on modern DOM logic which we will enrich inside script.js -->
   <script defer src="script.js"></script>
 </body>
 </html>

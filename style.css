@@ -977,3 +977,1159 @@ footer .nav-links a {
     gap: 20px;
   }
 }
+
+/* ==========================================================================
+   INTERACTIVE CV SPECIAL STYLES & INTERACTION STYLES
+   ========================================================================== */
+
+/* Page layout additions for CV */
+.cv-page-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* 1. Interactive CV Header */
+.cv-header-interactive {
+  background: linear-gradient(135deg, var(--link-color) 0%, var(--hover-bg) 100%);
+  color: #fff !important;
+  padding: 45px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.25);
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+.cv-header-interactive h1 {
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.cv-header-interactive .cv-subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cv-header-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.cv-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-icon-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-actions .btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cv-actions .btn-primary {
+  background-color: #fff;
+  color: var(--link-color);
+  border: 1px solid #fff;
+}
+
+.cv-actions .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+.cv-actions .btn-outline {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  background-color: transparent;
+}
+
+.cv-actions .btn-outline:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Quick Connections Card */
+.cv-quick-contact .contact-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  color: #fff;
+}
+
+.cv-quick-contact .contact-card h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 8px;
+}
+
+.contact-list-interactive {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-item-interactive {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.contact-item-interactive a {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item-interactive a:hover {
+  text-decoration: underline;
+  color: #f1f1f1 !important;
+}
+
+.contact-item-interactive .icon {
+  font-size: 1.1rem;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Copy button micro feedback style */
+.copy-btn, .btn-micro {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 2px 6px;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover, .btn-micro:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
+}
+
+.copyable-text {
+  cursor: pointer;
+  border-bottom: 1px dashed var(--link-color);
+  transition: all 0.2s ease;
+}
+
+.copyable-text:hover {
+  background-color: rgba(0, 123, 255, 0.15);
+  border-bottom-style: solid;
+}
+
+
+/* 2. Interactive Workspace Dashboard (Search / Filters / Tabs) */
+.cv-dashboard {
+  background-color: var(--section-bg);
+  border: 1px solid var(--border-color, rgba(0,0,0,0.08));
+  border-radius: 14px;
+  padding: 25px 30px;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dashboard-title {
+  margin-bottom: 20px;
+}
+
+.dashboard-title h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.35rem;
+  color: var(--link-color);
+  font-weight: 700;
+}
+
+.dashboard-title p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.cv-controls-grid {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 25px;
+  align-items: flex-end;
+}
+
+.controls-heading {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Tabs */
+.cv-tabs, .cv-filters {
+  display: inline-flex;
+  background-color: var(--card-bg);
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+}
+
+.cv-tab-btn, .filter-btn, .skill-cat-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.cv-tab-btn:hover, .filter-btn:hover, .skill-cat-btn:hover {
+  background-color: var(--section-bg);
+}
+
+.cv-tab-btn.active, .filter-btn.active, .skill-cat-btn.active {
+  background-color: var(--link-color);
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Live Search Container */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 11px 40px 11px 16px;
+  font-size: 0.92rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.15));
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+.search-input-wrapper input:focus {
+  outline: none;
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.search-status-counter {
+  position: absolute;
+  right: 40px;
+  font-size: 0.8rem;
+  background-color: var(--link-color);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: none;
+  pointer-events: none;
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  opacity: 0.6;
+  cursor: pointer;
+  font-size: 14px;
+  display: none;
+  padding: 5px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.clear-search-btn:hover {
+  background-color: var(--border-color);
+  opacity: 1;
+}
+
+
+/* 3. Interactive CV Sections & Pillar Highlighter Styling */
+.summary-interactive-content p {
+  margin-bottom: 12px;
+}
+
+.text-highlight-pillar-cloud, .text-highlight-pillar-web {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.text-highlight-pillar-cloud {
+  background-color: rgba(0, 123, 255, 0.04);
+  border-left-color: var(--link-color);
+}
+
+.text-highlight-pillar-web {
+  background-color: rgba(40, 167, 69, 0.04);
+  border-left-color: #28a745;
+}
+
+/* 4. Interactive Timeline Style */
+.timeline-interactive {
+  position: relative;
+  max-width: 1000px;
+  margin: 20px auto 0;
+  padding-left: 30px;
+}
+
+.timeline-interactive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8px;
+  width: 3px;
+  background: var(--border-color, #e9ecef);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  display: flex;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -30px;
+  top: 8px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 4px solid var(--link-color);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.25);
+  background: var(--link-color);
+}
+
+.timeline-content {
+  flex-grow: 1;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color, rgba(0,0,0,0.06));
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.expanded-item .timeline-content {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border-color: rgba(0, 123, 255, 0.2);
+}
+
+.timeline-header {
+  padding: 22px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.timeline-header:hover {
+  background-color: rgba(0, 123, 255, 0.02);
+}
+
+.timeline-header-text h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+.company-name {
+  color: var(--link-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 4px 0;
+  display: inline-block;
+}
+
+.timeline-period {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.accordion-toggle {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  transition: all 0.2s;
+}
+
+.accordion-toggle:hover {
+  background-color: rgba(0,123,255,0.08);
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 10px;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+
+/* Accordion body expand transition */
+.timeline-body-collapsible {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 30px;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease, opacity 0.3s ease;
+  border-top: 1px solid transparent;
+}
+
+.timeline-body-collapsible.active {
+  max-height: 1000px; /* Arbitrary large value that allows transition */
+  padding: 10px 30px 30px 30px;
+  opacity: 1;
+  border-top-color: var(--border-color, rgba(0,0,0,0.06));
+}
+
+.timeline-body-collapsible ul {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.timeline-body-collapsible li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Impact Metrics */
+.role-impact-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background-color: var(--section-bg);
+  border-radius: 8px;
+  padding: 12px 15px;
+  border-left: 3px solid var(--link-color);
+}
+
+.metric-num {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--link-color);
+  line-height: 1.2;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Timeline tech bubbles */
+.timeline-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.skill-bubble-ref {
+  background-color: var(--section-bg);
+  border: 1px solid var(--border-color, rgba(0,0,0,0.08));
+  color: var(--text-color);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skill-bubble-ref:hover {
+  background-color: var(--link-color);
+  color: #fff;
+  border-color: var(--link-color);
+}
+
+.skill-bubble-ref.connected-highlight {
+  background-color: #28a745;
+  color: #fff;
+  border-color: #28a745;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.45);
+  animation: pulse-green 1s infinite alternate;
+}
+
+@keyframes pulse-green {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+
+/* 5. Technical Skills Layout Additions */
+.skills-category-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.skills-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.skill-card-interactive {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color, rgba(0,0,0,0.08));
+  border-radius: 12px;
+  padding: 22px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card-interactive:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  border-color: var(--link-color);
+}
+
+.skill-card-interactive.selected-skill {
+  border-color: #28a745;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.2);
+  transform: scale(1.02);
+}
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.skill-card-header h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+.proficiency-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.proficiency-tag.expert {
+  background-color: rgba(0, 123, 255, 0.12);
+  color: var(--link-color);
+}
+
+.proficiency-tag.advanced {
+  background-color: rgba(40, 167, 69, 0.12);
+  color: #28a745;
+}
+
+.proficiency-tag.beginner {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ca9100;
+}
+
+/* Skill Progress Bars */
+.skill-level-meter {
+  height: 6px;
+  background-color: var(--section-bg);
+  border-radius: 3px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: var(--link-color);
+  border-radius: 3px;
+  transition: width 1s cubic-bezier(0.1, 0.76, 0.55, 0.94);
+}
+
+.skill-card-interactive.selected-skill .skill-progress {
+  background-color: #28a745;
+}
+
+.skill-card-desc {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.skill-highlight-target {
+  font-size: 0.78rem;
+  margin-top: auto;
+  padding-top: 15px;
+  color: var(--link-color);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.skill-card-interactive:hover .skill-highlight-target {
+  opacity: 1;
+}
+
+
+/* 6. Education credentials */
+.education-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+}
+
+.education-card-interactive {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color, rgba(0,0,0,0.06));
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.education-card-interactive h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  color: var(--link-color);
+}
+
+.education-card-interactive .desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.cert-interactive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cert-interactive-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  background-color: var(--section-bg);
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+
+/* 7. DevOps Interactive Console Sandbox */
+.sandbox-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+
+.sandbox-field {
+  margin-bottom: 20px;
+}
+
+.sandbox-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.form-control-interactive {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.15));
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.form-control-interactive:focus {
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.sandbox-console {
+  background-color: #0e1117;
+  color: #b5ceda;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  height: 100%;
+  border: 1px solid #21262d;
+}
+
+.console-header {
+  background-color: #161b22;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #21262d;
+}
+
+.console-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.console-dot.red { background-color: #ff5f56; }
+.console-dot.yellow { background-color: #ffbd2e; }
+.console-dot.green { background-color: #27c93f; }
+
+.console-title {
+  margin-left: 10px;
+  font-size: 0.78rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: #8b949e;
+}
+
+.console-body {
+  flex-grow: 1;
+  padding: 20px;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-y: auto;
+  max-height: 350px;
+  color: #58a6ff;
+}
+
+
+/* 8. Contact Center Interactive elements */
+.contact-grid-interactive {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+}
+
+.announcement-badge {
+  display: inline-block;
+  background-color: rgba(40, 167, 69, 0.12);
+  color: #28a745;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.contact-prompt-interactive {
+  background-color: var(--section-bg);
+  border-radius: 12px;
+  padding: 25px;
+  border-left: 4px solid var(--link-color);
+}
+
+
+/* 9. Toast System Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.cv-toast {
+  pointer-events: auto;
+  padding: 14px 20px;
+  background-color: #1e1e1e;
+  border-left: 4px solid #28a745;
+  color: #f8f9fa;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+[data-theme="dark"] .cv-toast {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+.toast-text {
+  font-weight: 500;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.toast-close:hover {
+  opacity: 1;
+}
+
+.toast-fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+
+/* 10. General Search Matching state */
+.search-match {
+  animation: highlight-search-glow 1s;
+}
+
+@keyframes highlight-search-glow {
+  0% { transform: scale(1); box-shadow: none; }
+  50% { transform: scale(1.02); box-shadow: 0 0 15px rgba(0, 123, 255, 0.4); border-color: var(--link-color); }
+  100% { transform: scale(1); }
+}
+
+/* Fade - inside Javascript dynamic display bindings */
+.fade-in-active {
+  animation: fadeInEffect 0.35s ease-out forwards;
+}
+
+@keyframes fadeInEffect {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================
+   MEDIA QUERY COHERENCE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .cv-header-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-header-interactive {
+    padding: 25px;
+  }
+  
+  .cv-header-interactive h1 {
+    font-size: 2.3rem;
+  }
+  
+  .cv-header-interactive .cv-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .cv-controls-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .cv-tabs, .cv-filters {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .cv-tab-btn, .filter-btn {
+    flex-grow: 1;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .timeline-interactive {
+    padding-left: 20px;
+  }
+  
+  .timeline-header {
+    padding: 15px 20px;
+  }
+  
+  .timeline-header-text h3 {
+    font-size: 1.15rem;
+  }
+  
+  .company-name {
+    font-size: 0.95rem;
+  }
+  
+  .timeline-body-collapsible.active {
+    padding: 10px 20px 20px 20px;
+  }
+  
+  .role-impact-metric-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sandbox-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-grid-interactive {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .cv-header-interactive {
+    background: none !important;
+    color: #212529 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .cv-header-interactive h1 {
+    color: #212529 !important;
+  }
+  
+  .cv-header-interactive .cv-subtitle {
+    color: #495057 !important;
+  }
+  
+  .cv-quick-contact .contact-card {
+    background: none !important;
+    color: #212529 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  
+  .cv-quick-contact .contact-card h4 {
+    display: none;
+  }
+  
+  .contact-item-interactive {
+    color: #212529 !important;
+  }
+  
+  .contact-item-interactive a {
+    color: var(--link-color) !important;
+  }
+  
+  .cv-actions, .cv-dashboard, .copy-btn, .btn-micro, .skills-category-filters, .print-hide, #toast-container {
+    display: none !important;
+  }
+  
+  .cv-section {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding: 20px 0 !important;
+    page-break-inside: avoid;
+  }
+  
+  .cv-section h2 {
+    color: var(--link-color) !important;
+    border-bottom: 1px solid var(--link-color) !important;
+  }
+  
+  .timeline-interactive {
+    padding-left: 0 !important;
+  }
+  
+  .timeline-interactive::before, .timeline-marker {
+    display: none !important;
+  }
+  
+  .timeline-content {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+  
+  .timeline-header {
+    padding: 0 0 10px 0 !important;
+    cursor: auto !important;
+  }
+  
+  .accordion-toggle {
+    display: none !important;
+  }
+  
+  .timeline-body-collapsible {
+    max-height: none !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+    display: block !important;
+    border-top: none !important;
+  }
+  
+  .role-impact-metric-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .metric-card {
+    border-left: 2px solid #212529 !important;
+    background: none !important;
+    padding: 5px !important;
+  }
+  
+  .skills-interactive-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 15px !important;
+  }
+  
+  .skill-card-interactive {
+    box-shadow: none !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 10px !important;
+    background: none !important;
+  }
+  
+  .skill-level-meter {
+    background-color: #e9ecef !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .skill-progress {
+    background-color: var(--link-color) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .skill-highlight-target {
+    display: none !important;
+  }
+  
+  .education-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .education-card-interactive {
+    border: none !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+}
+
